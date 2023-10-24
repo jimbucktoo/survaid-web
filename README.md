@@ -13,6 +13,7 @@ survaid-web is a mobile data collection toolkit, including a vast array of quest
 ## Color Scheme:
 
 Black - #000000
+White - #FFFFFF
 Blue - #026EFF
 Orange - #F15E23
 
