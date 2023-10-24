@@ -1,0 +1,61 @@
+body {
+  text-align: center;
+  background-color: #000000;
+  color: #026eff;
+}
+
+.aid {
+  color: #f15e23;
+}
+
+.login {
+  border-radius: 5px;
+}
+
+.signUpNow {
+  color: #f15e23;
+}
+
+.surv {
+  color: #026eff;
+  margin-top: 100px;
+}
+
+.survaidLogo {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0 auto;
+}
+
+#input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#password {
+  margin-top: 10px;
+}
+
+#signup {
+  margin-top: 30px;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 480px) {
+}
