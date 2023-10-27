@@ -1,51 +1,93 @@
 body {
-  text-align: center;
-  background-color: #000000;
-  color: #026eff;
+    text-align: center;
+    background-color: #000000;
+    color: #026eff;
 }
 
 .aid {
-  color: #f15e23;
+    color: #f15e23;
 }
 
-.login {
-  border-radius: 5px;
+.buttonOptions {
+    margin: 20px auto;
+}
+
+.cancel {
+    margin-left: 10px;
+}
+
+.forgotPassword {
+    margin-top: 5px;
+}
+
+.forgotPasswordLink {
+    text-decoration: none;
+    color: #026eff;
+}
+
+.forgotPasswordLink:hover {
+    text-decoration: none;
+    color: #026eff;
+}
+
+.inputAuth {
+    border-radius: 5px;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signUp {
+    margin-top: 30px;
+}
+
+.signUpLink {
+    text-decoration: none; 
+    color: #026eff;
+}
+
+.signUpLink:hover {
+    text-decoration: none; 
+    color: #026eff;
 }
 
 .signUpNow {
-  color: #f15e23;
+    text-decoration: none;
+    color: #f15e23;
+}
+
+.signUpNow:hover {
+    text-decoration: none;
+    color: #f15e23;
+    opacity: 100%;
 }
 
 .surv {
-  color: #026eff;
-  margin-top: 100px;
+    color: #026eff;
+    margin-top: 50px;
 }
 
 .survaidLogo {
-  max-width: 300px;
-  max-height: 300px;
-  margin: 0 auto;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 20px auto;
 }
 
 #input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 #password {
-  margin-top: 10px;
-}
-
-#signup {
-  margin-top: 30px;
+    margin-top: 10px;
 }
 
 ::placeholder {
-  text-align: center;
+    text-align: center;
 }
 
 @media only screen and (max-width: 1200px) {

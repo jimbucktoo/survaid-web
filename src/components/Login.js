@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import logo from "../assets/survaid.png";
 import "../App.css";
 
@@ -9,42 +9,42 @@ function Login() {
       <h1 className="surv">
         Surv<span className="aid">aid</span>
       </h1>
-
-      <div className="Login">
-        <img className="survaidLogo" src={logo} alt="Survaid Logo" />
-      </div>
-
+      <img className="survaidLogo" src={logo} alt="Survaid Logo" />
       <div>
-        <div id="input">
-          <input
-            className="login"
-            placeholder="Username"
-            id="username"
-            name="username"
-            type="text"
-            required
-          />
-          <input
-            className="login"
-            placeholder="Password"
-            id="password"
-            name="password"
-            type="password"
-            required
-          />
+        <form>
+          <div className="form-group">
+            <input
+              required
+              name="email"
+              type="email"
+              className="form-control inputAuth"
+              placeholder="Email"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              required
+              name="password"
+              type="password"
+              className="form-control inputAuth"
+              placeholder="Password"
+            />
+          </div>
+        </form>
+        <div className="buttonOptions">
+          <button className="btn btn-primary">Login</button>
         </div>
-
-        <button className="btn btn-primary">Login</button>
-        <div id="signup">
-          <a>
+      </div>
+      <div className="signUp">
+          <Link className="signUpLink" to={"/signup"}>
             Don't have an account?{" "}
             <span className="signUpNow">Sign up now</span>
-          </a>
-        </div>
-
-        <div id="forgot-password">
-          <a>Forgot your Password?</a>
-        </div>
+          </Link>
+      </div>
+      <div className="forgotPassword">
+          <Link className="forgotPasswordLink" to={"/"}>
+            Forgot your password?
+          </Link>
       </div>
     </div>
   );
