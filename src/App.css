@@ -4,16 +4,40 @@ body {
     color: #026eff;
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #000000;
+    text-decoration: none;
+}
+
 .aid {
     color: #f15e23;
 }
 
 .buttonOptions {
-    margin: 20px auto;
+    margin: 20px 20px 100px 20px; 
+    background-color: #000000;
 }
 
 .cancel {
     margin-left: 10px;
+}
+
+.createSurvey {
+    margin: 20px auto;
+}
+
+.createSurveyLink {
+    color: #026eff;
 }
 
 .forgotPassword {
@@ -37,8 +61,67 @@ body {
     text-align: center;
 }
 
+.lastItem {
+    border-bottom: 1px solid #000000;
+}
+
+.loginComponent {
+    background-color: #000000;
+    width: 100vw;
+    height: 100vh;
+}
+
+.navDropdown {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+}
+
+.navigation {
+    color: #000000;
+}
+
+.navigationItem {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    padding: 14px;
+}
+
+.navigationItem:hover {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    padding: 14px;
+    background-color: #026eff;
+    cursor: grab;
+    color: #FFFFFF;
+}
+
+.navigationItemSurveys {
+    border-top: 1px solid #f15e23;
+    border-left: 1px solid #f15e23;
+}
+
+.profile {
+    display: flex;
+    align-items: center; 
+}
+
+.sideBar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    border-right: 1px solid #000000;
+    padding-right: 0px;
+    width: 300px;
+}
+
 .signUp {
     margin-top: 30px;
+}
+
+.signUpComponent {
+    background-color: #000000;
+    width: 100vw;
 }
 
 .signUpLink {
@@ -64,13 +147,69 @@ body {
 
 .surv {
     color: #026eff;
-    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.survaidProfile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center; 
+    border-radius: 20px;
+}
+
+.survaidBrand {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.survaidContainer {
+    display: flex;
+    align-items: center; 
+    background-color: #000000;
+}
+
+.survaidLogoBrand {
+    max-width: 80px;
+    max-height: 80px;
+    margin: 10px auto;
 }
 
 .survaidLogo {
     max-width: 300px;
     max-height: 300px;
     margin: 20px auto;
+}
+
+.survBrand {
+    color: #026eff;
+    font-size: 36px;
+    margin: 0px auto;
+}
+
+.surveyDropdown {
+    background-color: #f15e23;
+    border: 1px solid #f15e23;
+    border-radius: 0px;
+    width: 100%;
+    height: 60px;
+}
+
+.surveyDropdown:focus {
+    background-color: #f15e23;
+    border: 1px solid #f15e23;
+    border-radius: 0px;
+    width: 100%;
+    box-shadow: none;
+}
+
+.surveyDropdown:focus {
+    background-color: #f15e23;
+}
+
+.surveys {
+    background-color: #FFFFFF;
 }
 
 #input {
