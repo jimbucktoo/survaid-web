@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/survaid.png";
 import "../App.css";
 
-function Signup() {
+function SignUp() {
     return (
         <div className="signUpComponent">
             <h1 className="surv">
@@ -59,4 +59,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default SignUp;

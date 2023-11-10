@@ -1,9 +1,3 @@
-body {
-    text-align: center;
-    background-color: #000000;
-    color: #026eff;
-}
-
 a {
     color: #000000;
     text-decoration: none;
@@ -19,17 +13,67 @@ a:focus {
     text-decoration: none;
 }
 
+body {
+    text-align: center;
+    background-color: #000000;
+    color: #026eff;
+    font-family: "Roboto", sans-serif;
+}
+
+.addQuestion {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    height: 60px;
+    color: #026eff;
+}
+
+.addQuestion:hover {
+    background-color: #026eff;
+    border: 1px solid #000000;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    height: 60px;
+    color: #ffffff;
+}
+
 .aid {
     color: #f15e23;
 }
 
+.bodyBox {
+    display: flex;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 20px;
+    margin: 100px auto 0px auto;
+    justify-content: space-around;
+}
+
+.bodyBoxInput {
+    text-align: left;
+}
+
+.bottomLineInput:focus {
+    border-bottom: 1px solid #000000;
+}
+
 .buttonOptions {
-    margin: 20px 20px 100px 20px; 
+    margin: 20px 20px 100px 20px;
     background-color: #000000;
 }
 
 .cancel {
     margin-left: 10px;
+    font-weight: normal;
 }
 
 .createSurvey {
@@ -38,6 +82,13 @@ a:focus {
 
 .createSurveyLink {
     color: #026eff;
+}
+
+.fieldInput {
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    width: 400px;
 }
 
 .forgotPassword {
@@ -52,6 +103,21 @@ a:focus {
 .forgotPasswordLink:hover {
     text-decoration: none;
     color: #026eff;
+}
+
+.fieldInputLabel {
+    color: black;
+    align-items: left;
+    margin-top: 10px;
+}
+
+.headerBar {
+    display: flex;
+    float: left;
+    padding: 40px 80px;
+    font-weight: bold;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .inputAuth {
@@ -71,9 +137,13 @@ a:focus {
     height: 100vh;
 }
 
+.microphone {
+    width: 28px;
+    margin-right: 4px;
+}
+
 .navDropdown {
     border-top: 1px solid #000000;
-    border-left: 1px solid #000000;
 }
 
 .navigation {
@@ -82,7 +152,6 @@ a:focus {
 
 .navigationItem {
     border-top: 1px solid #000000;
-    border-left: 1px solid #000000;
     padding: 14px;
 }
 
@@ -92,7 +161,11 @@ a:focus {
     padding: 14px;
     background-color: #026eff;
     cursor: grab;
-    color: #FFFFFF;
+    color: #ffffff;
+}
+
+.navigationItem:hover .navigation {
+    color: #ffffff;
 }
 
 .navigationItemSurveys {
@@ -102,7 +175,27 @@ a:focus {
 
 .profile {
     display: flex;
-    align-items: center; 
+    align-items: center;
+}
+
+.questionTypeDropdown {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 0px;
+    width: 100%;
+    height: 60px;
+    color: #000000;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save {
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
 }
 
 .sideBar {
@@ -125,12 +218,12 @@ a:focus {
 }
 
 .signUpLink {
-    text-decoration: none; 
+    text-decoration: none;
     color: #026eff;
 }
 
 .signUpLink:hover {
-    text-decoration: none; 
+    text-decoration: none;
     color: #026eff;
 }
 
@@ -145,17 +238,18 @@ a:focus {
     opacity: 100%;
 }
 
-.surv {
-    color: #026eff;
-    padding-top: 50px;
+.slider {
+    width: 28px;
+    margin-right: 4px;
 }
 
 .survaidProfile {
     width: 40px;
     height: 40px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     border-radius: 20px;
+    margin-right: 20px;
 }
 
 .survaidBrand {
@@ -166,7 +260,7 @@ a:focus {
 
 .survaidContainer {
     display: flex;
-    align-items: center; 
+    align-items: center;
     background-color: #000000;
 }
 
@@ -186,6 +280,25 @@ a:focus {
     color: #026eff;
     font-size: 36px;
     margin: 0px auto;
+}
+
+.surv {
+    color: #026eff;
+    padding-top: 50px;
+}
+
+.survey {
+    width: 100%;
+    height: auto;
+    background-color: #f3f3f3;
+}
+
+.surveys {
+    display: flex;
+}
+
+.surveyHeader {
+    font-weight: bold;
 }
 
 .surveyDropdown {
@@ -209,7 +322,7 @@ a:focus {
 }
 
 .surveys {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 #input {
