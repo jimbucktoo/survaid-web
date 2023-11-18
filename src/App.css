@@ -53,13 +53,33 @@ body {
     background-color: #ffffff;
     box-shadow: 5px 5px 5px #d3d3d3;
     width: 90%;
+    padding: 40px;
+    margin: 100px auto 20px auto;
+    justify-content: space-around;
+}
+
+.bodyBoxGraph {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
     padding: 20px;
-    margin: 100px auto 0px auto;
+    margin: 40px auto 20px auto;
     justify-content: space-around;
 }
 
 .bodyBoxInput {
     text-align: left;
+    width: 30%;
+}
+
+.bodyBoxInputs {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .bottomLineInput:focus {
@@ -74,6 +94,16 @@ body {
 .cancel {
     margin-left: 10px;
     font-weight: normal;
+    width: 100px;
+    background: transparent;
+    border: none;
+}
+
+.create {
+    width: 120px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    margin-right: 10px;
 }
 
 .createSurvey {
@@ -84,11 +114,43 @@ body {
     color: #026eff;
 }
 
+.delete {
+    width: 24px;
+}
+
+.edit {
+    width: 24px;
+}
+
+.editGraphHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.exportData {
+    width: 24px;
+}
+
+.export {
+    width: 120px;
+    border-radius: 5px;
+    background-color: #f15e23;
+    box-shadow: 5px 5px 5px #d3d3d3;
+}
+
 .fieldInput {
     border: none;
     border-bottom: 1px solid #000000;
     outline: none;
-    width: 400px;
+    width: 300px;
+}
+
+.fieldInputLabel {
+    color: black;
+    align-items: left;
+    margin-top: 20px;
 }
 
 .forgotPassword {
@@ -105,19 +167,46 @@ body {
     color: #026eff;
 }
 
-.fieldInputLabel {
-    color: black;
-    align-items: left;
-    margin-top: 10px;
+.graphBox {
+    display: flex;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 20px;
+    margin: 100px auto 0px auto;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.graphTitle {
+    margin: 0 auto;
+    color: #000000;
+    font-weight: bold;
+}
+
+.header {
+    font-weight: bold;
 }
 
 .headerBar {
     display: flex;
     float: left;
-    padding: 40px 80px;
+    padding: 40px 60px;
     font-weight: bold;
     width: 100%;
     justify-content: space-between;
+}
+
+.iconButton {
+    background-color: #ffffff;
+    border: none;
+}
+
+.icon {
+    width: 24px;
+    margin-right: 4px;
 }
 
 .inputAuth {
@@ -137,9 +226,9 @@ body {
     height: 100vh;
 }
 
-.microphone {
-    width: 28px;
-    margin-right: 4px;
+.main {
+    background-color: #ffffff;
+    display: flex;
 }
 
 .navDropdown {
@@ -173,9 +262,19 @@ body {
     border-left: 1px solid #f15e23;
 }
 
+.pictureBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
 .profile {
     display: flex;
     align-items: center;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 .questionTypeDropdown {
@@ -198,6 +297,11 @@ body {
     box-shadow: 5px 5px 5px #d3d3d3;
 }
 
+.saveOption {
+    width: 100px;
+    border-radius: 5px;
+}
+
 .sideBar {
     display: flex;
     justify-content: space-between;
@@ -206,6 +310,7 @@ body {
     border-right: 1px solid #000000;
     padding-right: 0px;
     width: 300px;
+    position: fixed;
 }
 
 .signUp {
@@ -238,20 +343,6 @@ body {
     opacity: 100%;
 }
 
-.slider {
-    width: 28px;
-    margin-right: 4px;
-}
-
-.survaidProfile {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    margin-right: 20px;
-}
-
 .survaidBrand {
     display: flex;
     justify-content: center;
@@ -276,10 +367,13 @@ body {
     margin: 20px auto;
 }
 
-.survBrand {
-    color: #026eff;
-    font-size: 36px;
-    margin: 0px auto;
+.survaidProfile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-right: 10px;
 }
 
 .surv {
@@ -287,18 +381,18 @@ body {
     padding-top: 50px;
 }
 
+.survBrand {
+    color: #026eff;
+    font-size: 36px;
+    margin: 0px auto;
+}
+
 .survey {
     width: 100%;
-    height: auto;
+    height: 100vh;
     background-color: #f3f3f3;
-}
-
-.surveys {
-    display: flex;
-}
-
-.surveyHeader {
-    font-weight: bold;
+    overflow-y: auto;
+    margin-left: 300px;
 }
 
 .surveyDropdown {
@@ -315,14 +409,6 @@ body {
     border-radius: 0px;
     width: 100%;
     box-shadow: none;
-}
-
-.surveyDropdown:focus {
-    background-color: #f15e23;
-}
-
-.surveys {
-    background-color: #ffffff;
 }
 
 #input {

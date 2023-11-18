@@ -1,8 +1,8 @@
 import React from "react";
 import logo from "../assets/survaid.png";
-import "../App.css";
 import Alex from "../assets/Alex.jpeg";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 function Sidebar() {
     return (
@@ -28,64 +28,64 @@ function Sidebar() {
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li>
-                            <a class="dropdown-item" href="#">Sleep Apnea Survey</a>
+                            <a class="dropdown-item" href="/surveys">Sleep Apnea Survey</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Sunlight Step Count Survey</a>
+                            <a class="dropdown-item" href="/surveys">Sunlight Step Count Survey</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Nicotine Addiction Survey</a>
+                            <a class="dropdown-item" href="/surveys">Nicotine Addiction Survey</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="navigationItem">
-                <a class="active navigation" aria-current="page" href="#">
+            <Link className="navigation" to={"/surveys"}>
+                <li class="navigationItem">
                     Survey
-                </a>
-            </li>
-            <li class="navigationItem">
-                <a class="navigation" href="#">
+                </li>
+            </Link>
+            <Link className="navigation" to={"/analytics"}>
+                <li class="navigationItem">
                     Analytics
-                </a>
-            </li>
-            <li class="navigationItem">
-                <a class="navigation" href="#">
+                </li>
+            </Link>
+            <Link className="navigation" to={"/surveys"}>
+                <li class="navigationItem">
                     Reporting
-                </a>
-            </li>
-            <li class="navigationItem">
-                <a class="navigation" href="#">
+                </li>
+            </Link>
+            <Link className="navigation" to={"/surveys"}>
+                <li class="navigationItem">
                     Activity
-                </a>
-            </li>
-            <li class="navigationItem">
-                <a class="navigation" href="#">
+                </li>
+            </Link>
+            <Link className="navigation" to={"/surveys"}>
+                <li class="navigationItem">
                     Messaging
-                </a>
-            </li>
-            <li class="navigationItem">
-                <a class="navigation" href="#">
+                </li>
+            </Link>
+            <Link className="navigation" to={"/surveys"}>
+                <li class="navigationItem">
                     Notifications
-                </a>
-            </li>
-            <li class="navigationItem lastItem">
-                <a class="navigation" href="#">
+                </li>
+            </Link>
+            <Link className="navigation" to={"/surveys"}>
+                <li class="navigationItem lastItem">
                     Team Management
-                </a>
-            </li>
-            <li class="createSurvey">
-                <a class="createSurveyLink" href="#">
+                </li>
+            </Link>
+            <Link className="createSurveyLink" to={"/surveys"}>
+                <li class="createSurvey">
                     + Create Survey
-                </a>
-            </li>
+                </li>
+            </Link>
         </ul>
-        <ul class="profile">
-            <img className="survaidProfile" src={Alex} alt="Profile Picture" />
-            <a class="navigation" href="#">
+        <Link className="navigation" to={"/surveys"}>
+            <div class="profile">
+                <img className="survaidProfile" src={Alex} alt="Profile Picture" />
                 Alex Gallion
-            </a>
-        </ul>
+            </div>
+        </Link>
     </div>
     );
 }

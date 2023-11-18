@@ -30,7 +30,7 @@ function Login() {
                     </div>
                 </form>
                 <div className="buttonOptions">
-                    <Link className="loginLink" to={"/Surveys"}>
+                    <Link className="loginLink" to={"/surveys"}>
                         <button className="btn btn-primary">Login</button>
                     </Link>
                 </div>
