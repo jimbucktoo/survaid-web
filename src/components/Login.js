@@ -12,31 +12,33 @@ function Login() {
             <img className="survaidLogo" src={logo} alt="Survaid Logo" />
             <div>
                 <form>
-                    <div className="form-group">
+                    <div>
                         <input
-                        required
-                        name="email"
-                        type="email"
-                        className="form-control inputAuth"
-                        placeholder="Email"/>
+                            required
+                            name="email"
+                            type="email"
+                            className="form-control inputAuth"
+                            placeholder="Email"
+                        />
                     </div>
-                    <div className="form-group">
+                    <div>
                         <input
-                        required
-                        name="password"
-                        type="password"
-                        className="form-control inputAuth"
-                        placeholder="Password"/>
+                            required
+                            name="password"
+                            type="password"
+                            className="form-control inputAuth"
+                            placeholder="Password"
+                        />
                     </div>
                 </form>
                 <div className="buttonOptions">
-                    <Link className="loginLink" to={"/surveys"}>
+                    <Link className="loginLink" to={"/Surveys"}>
                         <button className="btn btn-primary">Login</button>
                     </Link>
                 </div>
             </div>
             <div className="signUp">
-                <Link className="signUpLink" to={"/signup"}>
+                <Link className="signUpLink" to={"/SignUp"}>
                     Don't have an account?{" "}
                     <span className="signUpNow">Sign up now</span>
                 </Link>

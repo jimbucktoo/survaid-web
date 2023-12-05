@@ -20,6 +20,20 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+table {
+    text-align: left;
+}
+
+table thead th {
+    font-weight: bold;
+    border: transparent !important;
+}
+
+.aid {
+    color: #f15e23;
+    font-weight: bold;
+}
+
 .addQuestion {
     background-color: #ffffff;
     border: 1px solid #000000;
@@ -29,6 +43,7 @@ body {
     width: 90%;
     height: 60px;
     color: #026eff;
+    font-weight: bold;
 }
 
 .addQuestion:hover {
@@ -40,10 +55,6 @@ body {
     width: 90%;
     height: 60px;
     color: #ffffff;
-}
-
-.aid {
-    color: #f15e23;
 }
 
 .bodyBox {
@@ -67,7 +78,7 @@ body {
     box-shadow: 5px 5px 5px #d3d3d3;
     width: 90%;
     padding: 20px;
-    margin: 40px auto 20px auto;
+    margin: 40px auto 40px auto;
     justify-content: space-around;
 }
 
@@ -80,6 +91,28 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+}
+
+.bodyBoxParticipants {
+    display: flex;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 0px auto 20px auto;
+    justify-content: space-around;
+}
+
+.bodyBoxResearchers {
+    display: flex;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 0px auto 20px auto;
+    justify-content: space-around;
 }
 
 .bottomLineInput:focus {
@@ -99,7 +132,26 @@ body {
     border: none;
 }
 
-.create {
+.cancelSignUp {
+    margin-left: 10px;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    background-color: #f3f3f3;
+    overflow-y: auto;
+    margin-left: 300px;
+}
+
+.createGraph {
+    width: 120px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    margin-right: 10px;
+}
+
+.createTeam {
     width: 120px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #d3d3d3;
@@ -108,6 +160,7 @@ body {
 
 .createSurvey {
     margin: 20px auto;
+    font-weight: bold;
 }
 
 .createSurveyLink {
@@ -129,8 +182,14 @@ body {
     margin-bottom: 20px;
 }
 
-.exportData {
-    width: 24px;
+.editManagement {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px 10px 0px;
+}
+
+.editGraph {
+    font-weight: bold;
 }
 
 .export {
@@ -138,6 +197,11 @@ body {
     border-radius: 5px;
     background-color: #f15e23;
     box-shadow: 5px 5px 5px #d3d3d3;
+    border: none;
+}
+
+.exportData {
+    width: 24px;
 }
 
 .fieldInput {
@@ -151,6 +215,7 @@ body {
     color: black;
     align-items: left;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .forgotPassword {
@@ -199,9 +264,8 @@ body {
     justify-content: space-between;
 }
 
-.iconButton {
-    background-color: #ffffff;
-    border: none;
+.hide {
+    display: none;
 }
 
 .icon {
@@ -209,11 +273,24 @@ body {
     margin-right: 4px;
 }
 
+.iconButton {
+    background-color: #ffffff;
+    border: none;
+}
+
 .inputAuth {
     border-radius: 5px;
     width: 20%;
-    margin: 0 auto;
+    margin: 10px auto 0px auto;
     text-align: center;
+}
+
+.invite {
+    width: 120px;
+    border-radius: 5px;
+    background-color: #f15e23;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    border: none;
 }
 
 .lastItem {
@@ -231,6 +308,19 @@ body {
     display: flex;
 }
 
+.management {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.managementOptions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
 .navDropdown {
     border-top: 1px solid #000000;
 }
@@ -242,24 +332,55 @@ body {
 .navigationItem {
     border-top: 1px solid #000000;
     padding: 14px;
+    font-weight: bold;
 }
 
 .navigationItem:hover {
     border-top: 1px solid #000000;
     border-left: 1px solid #000000;
     padding: 14px;
+    font-weight: bold;
     background-color: #026eff;
     cursor: grab;
     color: #ffffff;
 }
 
 .navigationItem:hover .navigation {
+    font-weight: bold;
     color: #ffffff;
 }
 
 .navigationItemSurveys {
     border-top: 1px solid #f15e23;
     border-left: 1px solid #f15e23;
+}
+
+.participant {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid #f15e23;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #f15e23;
+    padding: 10px 0px;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 18px;
+}
+
+.participants {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid #f15e23;
+    width: 100%;
+    text-align: center;
+    color: #f15e23;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
 }
 
 .pictureBar {
@@ -275,6 +396,7 @@ body {
     align-items: center;
     margin-left: 1rem;
     margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .questionTypeDropdown {
@@ -286,6 +408,40 @@ body {
     color: #000000;
 }
 
+.remove {
+    background-color: transparent;
+    color: red;
+    border: none;
+}
+
+.researcher {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid #026eff;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background-color: #026eff;
+    padding: 10px 0px;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 18px;
+}
+
+.researchers {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid #026eff;
+    color: #026eff;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
+}
+
 .row {
     display: flex;
     justify-content: space-between;
@@ -295,6 +451,11 @@ body {
     width: 100px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #d3d3d3;
+}
+
+.saveCancel {
+    display: flex;
+    justify-content: space-between;
 }
 
 .saveOption {
@@ -343,6 +504,16 @@ body {
     opacity: 100%;
 }
 
+.surv {
+    color: #026eff;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+.survaidBlue {
+    color: #026eff;
+}
+
 .survaidBrand {
     display: flex;
     justify-content: center;
@@ -355,16 +526,20 @@ body {
     background-color: #000000;
 }
 
+.survaidLogo {
+    max-width: 240px;
+    max-height: 240px;
+    margin: 20px auto;
+}
+
 .survaidLogoBrand {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 60px;
+    max-height: 60px;
     margin: 10px auto;
 }
 
-.survaidLogo {
-    max-width: 300px;
-    max-height: 300px;
-    margin: 20px auto;
+.survaidOrange {
+    color: #f15e23;
 }
 
 .survaidProfile {
@@ -376,23 +551,11 @@ body {
     margin-right: 10px;
 }
 
-.surv {
-    color: #026eff;
-    padding-top: 50px;
-}
-
 .survBrand {
     color: #026eff;
     font-size: 36px;
+    font-weight: bold;
     margin: 0px auto;
-}
-
-.survey {
-    width: 100%;
-    height: 100vh;
-    background-color: #f3f3f3;
-    overflow-y: auto;
-    margin-left: 300px;
 }
 
 .surveyDropdown {
@@ -401,6 +564,7 @@ body {
     border-radius: 0px;
     width: 100%;
     height: 60px;
+    font-weight: bold;
 }
 
 .surveyDropdown:focus {
@@ -409,6 +573,24 @@ body {
     border-radius: 0px;
     width: 100%;
     box-shadow: none;
+    font-weight: bold;
+}
+
+.user {
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userContainer {
+    display: flex;
+    align-items: center;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 #input {

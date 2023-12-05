@@ -10,50 +10,55 @@ function SignUp() {
             </h1>
             <img className="survaidLogo" src={logo} alt="Survaid Logo" />
             <form>
-                <div className="form-group">
+                <div>
                     <input
-                    required
-                    name="email"
-                    type="email"
-                    className="form-control inputAuth"
-                    placeholder="Email"/>
+                        required
+                        name="email"
+                        type="email"
+                        className="form-control inputAuth"
+                        placeholder="Email"
+                    />
                 </div>
-                <div className="form-group">
+                <div>
                     <input
-                    required
-                    name="password"
-                    type="password"
-                    className="form-control inputAuth"
-                    placeholder="Password"/>
+                        required
+                        name="password"
+                        type="password"
+                        className="form-control inputAuth"
+                        placeholder="Password"
+                    />
                 </div>
-                <div className="form-group">
+                <div>
                     <input
-                    required
-                    name="confirmPassword"
-                    type="password"
-                    className="form-control inputAuth"
-                    placeholder="Confirm Password"/>
+                        required
+                        name="confirmPassword"
+                        type="password"
+                        className="form-control inputAuth"
+                        placeholder="Confirm Password"
+                    />
                 </div>
-                <div className="form-group">
+                <div>
                     <input
-                    required
-                    name="firstName"
-                    type="text"
-                    className="form-control inputAuth"
-                    placeholder="First Name"/>
+                        required
+                        name="firstName"
+                        type="text"
+                        className="form-control inputAuth"
+                        placeholder="First Name"
+                    />
                 </div>
-                <div className="form-group">
+                <div>
                     <input
-                    required
-                    name="lastName"
-                    type="text"
-                    className="form-control inputAuth"
-                    placeholder="Last Name"/>
+                        required
+                        name="lastName"
+                        type="text"
+                        className="form-control inputAuth"
+                        placeholder="Last Name"
+                    />
                 </div>
             </form>
             <div className="buttonOptions">
                 <button className="btn btn-primary">Sign Up</button>
-                <button className="btn btn-danger cancel">Cancel</button>
+                <button className="btn btn-danger cancelSignUp">Cancel</button>
             </div>
         </div>
     );
