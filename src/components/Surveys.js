@@ -14,7 +14,7 @@ import pedometer from "../assets/pedometer.png";
 import altimeter from "../assets/altimeter.png";
 import light from "../assets/light.png";
 import gps from "../assets/gps.png";
-import Sidebar from "./sidebar";
+import Sidebar from "./Sidebar";
 import "../App.css";
 
 function Surveys() {

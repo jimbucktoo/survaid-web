@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "./sidebar";
+import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import Alex from "../assets/Alex.jpeg";
 import Brandon from "../assets/Brandon.jpeg";

@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./sidebar";
+import Sidebar from "./Sidebar";
 import pencil from "../assets/pencil.png";
 import trashCan from "../assets/trashCan.png";
 import exportData from "../assets/export.png";

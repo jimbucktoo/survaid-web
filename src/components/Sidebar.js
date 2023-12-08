@@ -11,30 +11,30 @@ function Sidebar() {
                 <a className="survaidBrand" href="/">
                     <div className="survaidContainer">
                         <img
-                            className="survaidLogoBrand"
-                            src={logo}
-                            alt="Survaid Logo"
-                        />
-                        <p className="survBrand">
-                            Surv<span className="aid">aid</span>
-                        </p>
-                    </div>
-                </a>
-                <li class="navDropdown">
-                    <div class="dropdown">
-                        <button
+                        className="survaidLogoBrand"
+                        src={logo}
+                        alt="Survaid Logo"
+                    />
+                            <p className="survBrand">
+                                Surv<span className="aid">aid</span>
+                            </p>
+                        </div>
+                    </a>
+                    <li class="navDropdown">
+                        <div class="dropdown">
+                            <button
                             class="btn btn-primary dropdown-toggle surveyDropdown"
                             type="button"
                             id="dropdownMenuButton1"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
-                            Sleep Apnea Survey
+                                Sleep Apnea Survey
                         </button>
                         <ul
-                            class="dropdown-menu"
-                            aria-labelledby="dropdownMenuButton1"
-                        >
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                    >
                             <li>
                                 <Link className="dropdown-item" to={"/Surveys"}>
                                     Sleep Apnea Survey
@@ -61,9 +61,6 @@ function Sidebar() {
                 </Link>
                 <Link className="navigation" to={"/Reporting"}>
                     <li class="navigationItem">Reporting</li>
-                </Link>
-                <Link className="navigation" to={"/Activity"}>
-                    <li class="navigationItem">Activity</li>
                 </Link>
                 <Link className="navigation" to={"/Messaging"}>
                     <li class="navigationItem">Messaging</li>
