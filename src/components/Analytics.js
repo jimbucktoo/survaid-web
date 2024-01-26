@@ -44,105 +44,105 @@ function Analytics() {
                     <h5 className="header">Analytics:</h5>
                     <div>
                         <button
-                            class="btn btn-primary createGraph"
-                            type="button"
-                        >
+                        class="btn btn-primary createGraph"
+                        type="button"
+                    >
                             Create Graph
-                        </button>
-                        <button class="btn btn-secondary export" type="button">
-                            Export Data
-                        </button>
-                    </div>
+                    </button>
+                    <button class="btn btn-secondary export" type="button">
+                        Export Data
+                    </button>
                 </div>
-                <div className="graphBox">
-                    <div className="pictureBar">
-                        <h6 className="graphTitle">
-                            Trends in Sleep Volume Over Time
-                        </h6>
-                        <div className="graphOptions">
-                            <button class="iconButton">
-                                <img className="edit" src={pencil} alt="Edit" />
+            </div>
+            <div className="graph">
+                <div className="pictureBar">
+                    <h6 className="graphTitle">
+                        Trends in Sleep Volume Over Time
+                    </h6>
+                    <div className="graphOptions">
+                        <button class="iconButton">
+                            <img className="edit" src={pencil} alt="Edit" />
+                        </button>
+                        <button class="iconButton">
+                            <img
+                            className="exportData"
+                            src={exportData}
+                            alt="Export Data"
+                        />
                             </button>
                             <button class="iconButton">
                                 <img
-                                    className="exportData"
-                                    src={exportData}
-                                    alt="Export Data"
-                                />
-                            </button>
-                            <button class="iconButton">
-                                <img
-                                    className="delete"
-                                    src={trashCan}
-                                    alt="Delete"
-                                />
-                            </button>
+                                className="delete"
+                                src={trashCan}
+                                alt="Delete"
+                            />
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <Chart
+                        <Chart
                         chartType="LineChart"
                         width="100%"
                         height="400px"
                         data={data}
                         options={options}
                     />
-                </div>
-                <div className="bodyBoxGraph">
-                    <div className="editGraphHeader">
-                        <h6 className="editGraph">Edit Graph:</h6>
-                        <div>
-                            <button
-                                class="btn btn-primary saveOption"
-                                type="button"
-                            >
-                                Save
-                            </button>
-                            <button class="cancel">Cancel</button>
                         </div>
-                    </div>
-                    <div className="bodyBoxInputs">
-                        <div className="bodyBoxInput">
-                            <label className="fieldInputLabel">
-                                Title: Trends in Sleep Volume Over Time
-                            </label>
-                            <input className="fieldInput" />
-                            <label className="fieldInputLabel">
-                                Graph Type: Line Graph{" "}
-                            </label>
-                            <input className="fieldInput" />
+                        <div className="editGraph">
+                            <div className="editGraphHeader">
+                                <h6 className="editGraphTitle">Edit Graph:</h6>
+                                <div>
+                                    <button
+                                    class="btn btn-primary saveOption"
+                                    type="button"
+                                >
+                                        Save
+                                </button>
+                                <button class="cancel">Cancel</button>
+                            </div>
                         </div>
-                        <div className="bodyBoxInput">
-                            <label className="fieldInputLabel">
-                                X-Axis Sensor: Clock
-                            </label>
-                            <input className="fieldInput" />
-                            <label className="fieldInputLabel">
-                                X-Axis: Time
-                            </label>
-                            <input className="fieldInput" />
-                            <label className="fieldInputLabel">
-                                Interval: 15 Minutes{" "}
-                            </label>
-                            <input className="fieldInput" />
-                        </div>
-                        <div className="bodyBoxInput">
-                            <label className="fieldInputLabel">
-                                Y-Axis Sensor: Microphone{" "}
-                            </label>
-                            <input className="fieldInput" />
-                            <label className="fieldInputLabel">
-                                Y-Axis: Volume (dB){" "}
-                            </label>
-                            <input className="fieldInput" />
-                            <label className="fieldInputLabel">
-                                Interval: 20 (dB){" "}
-                            </label>
-                            <input className="fieldInput" />
+                        <div className="editGraphInputs">
+                            <div className="editGraphInput">
+                                <label className="editInputLabel">
+                                    Title: Trends in Sleep Volume Over Time
+                                </label>
+                                <input className="editInput" />
+                                <label className="editInputLabel">
+                                    Graph Type: Line Graph{" "}
+                                </label>
+                                <input className="editInput" />
+                            </div>
+                            <div className="editGraphInput">
+                                <label className="editInputLabel">
+                                    X-Axis Sensor: Clock
+                                </label>
+                                <input className="editInput" />
+                                <label className="editInputLabel">
+                                    X-Axis: Time
+                                </label>
+                                <input className="editInput" />
+                                <label className="editInputLabel">
+                                    Interval: 15 Minutes{" "}
+                                </label>
+                                <input className="editInput" />
+                            </div>
+                            <div className="editGraphInput">
+                                <label className="editInputLabel">
+                                    Y-Axis Sensor: Microphone{" "}
+                                </label>
+                                <input className="editInput" />
+                                <label className="editInputLabel">
+                                    Y-Axis: Volume (dB){" "}
+                                </label>
+                                <input className="editInput" />
+                                <label className="editInputLabel">
+                                    Interval: 20 (dB){" "}
+                                </label>
+                                <input className="editInput" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 

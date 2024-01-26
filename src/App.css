@@ -3,12 +3,12 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:focus {
     color: #000000;
     text-decoration: none;
 }
 
-a:focus {
+a:hover {
     color: #000000;
     text-decoration: none;
 }
@@ -27,11 +27,6 @@ table {
 table thead th {
     font-weight: bold;
     border: transparent !important;
-}
-
-.aid {
-    color: #f15e23;
-    font-weight: bold;
 }
 
 .addQuestion {
@@ -57,66 +52,9 @@ table thead th {
     color: #ffffff;
 }
 
-.bodyBox {
-    display: flex;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 100px auto 20px auto;
-    justify-content: space-around;
-}
-
-.bodyBoxGraph {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 20px;
-    margin: 40px auto 40px auto;
-    justify-content: space-around;
-}
-
-.bodyBoxInput {
-    text-align: left;
-    width: 30%;
-}
-
-.bodyBoxInputs {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.bodyBoxParticipants {
-    display: flex;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 0px auto 20px auto;
-    justify-content: space-around;
-}
-
-.bodyBoxResearchers {
-    display: flex;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 0px auto 20px auto;
-    justify-content: space-around;
-}
-
-.bottomLineInput:focus {
-    border-bottom: 1px solid #000000;
+.aid {
+    color: #f15e23;
+    font-weight: bold;
 }
 
 .buttonOptions {
@@ -151,13 +89,6 @@ table thead th {
     margin-right: 10px;
 }
 
-.createTeam {
-    width: 120px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    margin-right: 10px;
-}
-
 .createSurvey {
     margin: 20px auto;
     font-weight: bold;
@@ -165,6 +96,13 @@ table thead th {
 
 .createSurveyLink {
     color: #026eff;
+}
+
+.createTeam {
+    width: 120px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    margin-right: 10px;
 }
 
 .delete {
@@ -175,6 +113,19 @@ table thead th {
     width: 24px;
 }
 
+.editGraph {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 20px;
+    margin: 40px auto 40px auto;
+    justify-content: space-around;
+}
+
 .editGraphHeader {
     display: flex;
     justify-content: space-between;
@@ -182,14 +133,42 @@ table thead th {
     margin-bottom: 20px;
 }
 
+.editGraphInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.editGraphInput {
+    text-align: left;
+    width: 30%;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.editInputLabel {
+    color: black;
+    align-items: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.editInput {
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    width: 100%;
+}
+
+.editGraphTitle {
+    font-weight: bold;
+}
+
+
 .editManagement {
     display: flex;
     justify-content: space-between;
     margin: 30px 0px 10px 0px;
-}
-
-.editGraph {
-    font-weight: bold;
 }
 
 .export {
@@ -202,20 +181,6 @@ table thead th {
 
 .exportData {
     width: 24px;
-}
-
-.fieldInput {
-    border: none;
-    border-bottom: 1px solid #000000;
-    outline: none;
-    width: 300px;
-}
-
-.fieldInputLabel {
-    color: black;
-    align-items: left;
-    margin-top: 20px;
-    font-weight: bold;
 }
 
 .forgotPassword {
@@ -232,7 +197,7 @@ table thead th {
     color: #026eff;
 }
 
-.graphBox {
+.graph {
     display: flex;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -383,6 +348,17 @@ table thead th {
     font-size: 18px;
 }
 
+.participantsTeam {
+    display: flex;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 0px auto 20px auto;
+    justify-content: space-around;
+}
+
 .pictureBar {
     display: flex;
     justify-content: space-between;
@@ -397,6 +373,40 @@ table thead th {
     margin-left: 1rem;
     margin-bottom: 1rem;
     font-weight: bold;
+}
+
+.question {
+    display: flex;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 100px auto 20px auto;
+    justify-content: space-around;
+}
+
+.questionInput {
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    width: 300px;
+}
+
+.questionInputLabel {
+    color: black;
+    align-items: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.questionInputs {
+    text-align: left;
+}
+
+.questionType {
+
 }
 
 .questionTypeDropdown {
@@ -440,6 +450,17 @@ table thead th {
     cursor: pointer;
     background-color: transparent;
     font-size: 18px;
+}
+
+.researchersTeam {
+    display: flex;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 0px auto 20px auto;
+    justify-content: space-around;
 }
 
 .row {
@@ -611,13 +632,20 @@ table thead th {
 }
 
 @media only screen and (max-width: 1200px) {
+    .editGraphInput {
+        width: 45%;
+    }
 }
 
 @media only screen and (max-width: 992px) {
+    .editGraphInput {
+        width: 60%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    .editGraphInput {
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 480px) {
-}
