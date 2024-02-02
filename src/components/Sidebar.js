@@ -62,6 +62,9 @@ function Sidebar() {
                 <Link className="navigation" to={"/Reporting"}>
                     <li class="navigationItem">Reporting</li>
                 </Link>
+                <Link className="navigation" to={"/Activity"}>
+                    <li class="navigationItem">Activity</li>
+                </Link>
                 <Link className="navigation" to={"/Messaging"}>
                     <li class="navigationItem">Messaging</li>
                 </Link>

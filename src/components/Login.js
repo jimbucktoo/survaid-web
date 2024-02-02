@@ -1,22 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import logo from "../assets/survaid.png";
 import "../App.css";
-import { getDatabase, ref, onValue } from "firebase/database";
 import '../firebase/firebase';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged  } from "firebase/auth";
 
-function Login() {
+const Login = () => {
 
-    const database = getDatabase();
-    const surveyRef = ref(database, 'surveys/');
-    onValue(surveyRef, (snapshot) => {
-        const data = snapshot.val();
-        if( !!data ) {
-            console.log(data);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            console.log(user.email + ": Signed In")
         } else {
-            console.log('Data not found');
-        }  
+            console.log("Signed Out")
+        }
     });
+
+    const Login = (e) => {
+        e.preventDefault();
+        console.log("Login")
+        console.log(email, password)
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log(userCredential)
+            }).catch((error) => {
+                console.log(error)
+            })
+    }
 
     return (
         <div className="loginComponent">
@@ -25,44 +38,46 @@ function Login() {
             </h1>
             <img className="survaidLogo" src={logo} alt="Survaid Logo" />
             <div>
-                <form>
-                    <div>
+                <form onSubmit={Login}>
+                    <div className="form-group">
                         <input
                         required
                         name="email"
                         type="email"
                         className="form-control inputAuth"
                         placeholder="Email"
-                    />
-                        </div>
-                        <div>
-                            <input
-                            required
-                            name="password"
-                            type="password"
-                            className="form-control inputAuth"
-                            placeholder="Password"
-                        />
-                            </div>
-                        </form>
-                        <div className="buttonOptions">
-                            <Link className="loginLink" to={"/Surveys"}>
-                                <button className="btn btn-primary">Login</button>
-                            </Link>
-                        </div>
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    <div className="signUp">
-                        <Link className="signUpLink" to={"/SignUp"}>
-                            Don't have an account?{" "}
-                            <span className="signUpNow">Sign up now</span>
-                        </Link>
+                    <div className="form-group">
+                        <input
+                        required
+                        name="password"
+                        type="password"
+                        className="form-control inputAuth"
+                        placeholder="Password"
+                        pattern=".{8,}" title="Eight or more characters"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} />
                     </div>
-                    <div className="forgotPassword">
-                        <Link className="forgotPasswordLink" to={"/"}>
-                            Forgot your password?
-                        </Link>
+                    <div className="buttonOptions">
+                        <button className="btn btn-primary" type="submit">Login</button>
                     </div>
-                </div>
+                </form>
+            </div>
+            <div className="signUp">
+                <Link className="signUpLink" to={"/SignUp"}>
+                    Don't have an account?{" "}
+                    <span className="signUpNow">Sign up now</span>
+                </Link>
+            </div>
+            <div className="forgotPassword">
+                <Link className="forgotPasswordLink" to={"/"}>
+                    Forgot your password?
+                </Link>
+            </div>
+        </div>
     );
 }
 
