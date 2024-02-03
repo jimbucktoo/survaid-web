@@ -44,12 +44,12 @@ function Analytics() {
                     <h5 className="header">Analytics:</h5>
                     <div>
                         <button
-                        class="btn btn-primary createGraph"
+                        className="btn btn-primary createGraph"
                         type="button"
                     >
                             Create Graph
                     </button>
-                    <button class="btn btn-secondary export" type="button">
+                    <button className="btn btn-secondary export" type="button">
                         Export Data
                     </button>
                 </div>
@@ -63,14 +63,14 @@ function Analytics() {
                         <button class="iconButton">
                             <img className="edit" src={pencil} alt="Edit" />
                         </button>
-                        <button class="iconButton">
+                        <button className="iconButton">
                             <img
                             className="exportData"
                             src={exportData}
                             alt="Export Data"
                         />
                             </button>
-                            <button class="iconButton">
+                            <button className="iconButton">
                                 <img
                                 className="delete"
                                 src={trashCan}
@@ -92,12 +92,12 @@ function Analytics() {
                                 <h6 className="editGraphTitle">Edit Graph:</h6>
                                 <div>
                                     <button
-                                    class="btn btn-primary saveOption"
+                                    className="btn btn-primary saveOption"
                                     type="button"
                                 >
                                         Save
                                 </button>
-                                <button class="cancel">Cancel</button>
+                                <button className="cancel">Cancel</button>
                             </div>
                         </div>
                         <div className="editGraphInputs">

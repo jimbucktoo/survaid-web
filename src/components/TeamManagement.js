@@ -25,10 +25,10 @@ function TeamManagement() {
                 <div className="headerBar">
                     <h5 className="header">Team Management:</h5>
                     <div>
-                        <button class="btn btn-primary createTeam" type="button">
+                        <button className="btn btn-primary createTeam" type="button">
                             Create Team
                         </button>
-                        <button class="btn btn-secondary invite" type="button">
+                        <button className="btn btn-secondary invite" type="button">
                             Invite Users
                         </button>
                     </div>
@@ -83,58 +83,58 @@ function TeamManagement() {
                         id="collapse1"
                         data-bs-parent="#participantsTeam"
                     >
-                            <td colspan="3">
+                            <td colSpan="3">
                                 <div className="managementOptions">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label" for="inlineCheckbox1">
+                                    <div className="form-check form-check-inline">
+                                        <label className="form-check-label" htmlFor="inlineCheckbox1">
                                             Create
                                         </label>
                                         <input
-                                        class="form-check-input"
+                                        className="form-check-input"
                                         type="checkbox"
                                         id="inlineCheckbox1"
                                         checked
                                     ></input>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label" for="inlineCheckbox2">
+                                <div className="form-check form-check-inline">
+                                    <label className="form-check-label" htmlFor="inlineCheckbox2">
                                         View
                                     </label>
                                     <input
-                                    class="form-check-input"
+                                    className="form-check-input"
                                     type="checkbox"
                                     id="inlineCheckbox2"
                                     checked
                                 ></input>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label" for="inlineCheckbox3">
+                            <div className="form-check form-check-inline">
+                                <label className="form-check-label" htmlFor="inlineCheckbox3">
                                     Edit
                                 </label>
                                 <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 id="inlineCheckbox3"
                                 checked
                             ></input>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label" for="inlineCheckbox4">
+                        <div className="form-check form-check-inline">
+                            <label className="form-check-label" htmlFor="inlineCheckbox4">
                                 Delete
                             </label>
                             <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="checkbox"
                             id="inlineCheckbox4"
                             checked
                         ></input>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label" for="inlineCheckbox5">
+                    <div className="form-check form-check-inline">
+                        <label className="form-check-label" htmlFor="inlineCheckbox5">
                             Export
                         </label>
                         <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="checkbox"
                         id="inlineCheckbox5"
                         checked
@@ -144,11 +144,11 @@ function TeamManagement() {
             <div className="editManagement">
                 <button className="remove">Remove Researcher</button>
                 <div className="saveCancel">
-                    <button class="btn btn-primary save" type="button">
+                    <button className="btn btn-primary save" type="button">
                         Save
                     </button>
                     <button
-                    class="cancel"
+                    className="cancel"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapse1"
                     aria-expanded="false"
@@ -167,7 +167,7 @@ aria-expanded="false"
 aria-controls="collapse2"
     >
     <td>
-        <div class="userContainer">
+        <div className="userContainer">
             <Link className="user" to={"/Profile"}>
                 <img
                 className="survaidProfile"
@@ -186,55 +186,55 @@ aria-controls="collapse2"
     id="collapse2"
     data-bs-parent="#participantsTeam"
 >
-        <td colspan="3">
+        <td colSpan="3">
             <div className="managementOptions">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="inlineCheckbox1">
+                <div className="form-check form-check-inline">
+                    <label className="form-check-label" htmlFor="inlineCheckbox1">
                         Create
                     </label>
                     <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="checkbox"
                     id="inlineCheckbox1"
                 ></input>
             </div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2">
+            <div className="form-check form-check-inline">
+                <label className="form-check-label" htmlFor="inlineCheckbox2">
                     View
                 </label>
                 <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox2"
                 checked
             ></input>
         </div>
-        <div class="form-check form-check-inline">
-            <label class="form-check-label" for="inlineCheckbox3">
+        <div className="form-check form-check-inline">
+            <label className="form-check-label" htmlFor="inlineCheckbox3">
                 Edit
             </label>
             <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             id="inlineCheckbox3"
         ></input>
     </div>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox4">
+    <div className="form-check form-check-inline">
+        <label className="form-check-label" htmlFor="inlineCheckbox4">
             Delete
         </label>
         <input
-        class="form-check-input"
+        className="form-check-input"
         type="checkbox"
         id="inlineCheckbox4"
     ></input>
 </div>
-<div class="form-check form-check-inline">
-    <label class="form-check-label" for="inlineCheckbox5">
+<div className="form-check form-check-inline">
+    <label className="form-check-label" htmlFor="inlineCheckbox5">
         Export
     </label>
     <input
-    class="form-check-input"
+    className="form-check-input"
     type="checkbox"
     id="inlineCheckbox5"
     checked
@@ -244,11 +244,11 @@ aria-controls="collapse2"
         <div className="editManagement">
             <button className="remove">Remove Researcher</button>
             <div className="saveCancel">
-                <button class="btn btn-primary save" type="button">
+                <button className="btn btn-primary save" type="button">
                     Save
                 </button>
                 <button
-                class="cancel"
+                className="cancel"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapse2"
                 aria-expanded="false"
@@ -282,10 +282,10 @@ aria-controls="collapse2"
     id="collapse3"
     data-bs-parent="#participantsTeam"
 >
-        <td colspan="3">
+        <td colSpan="3">
             <div className="managementOptions">
                 <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="inlineCheckbox1">
+                    <label class="form-check-label" htmlFor="inlineCheckbox1">
                         Create
                     </label>
                     <input
@@ -296,7 +296,7 @@ aria-controls="collapse2"
                 ></input>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2">
+                <label class="form-check-label" htmlFor="inlineCheckbox2">
                     View
                 </label>
                 <input
@@ -307,7 +307,7 @@ aria-controls="collapse2"
             ></input>
         </div>
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="inlineCheckbox3">
+            <label class="form-check-label" htmlFor="inlineCheckbox3">
                 Edit
             </label>
             <input
@@ -318,7 +318,7 @@ aria-controls="collapse2"
         ></input>
     </div>
     <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox4">
+        <label class="form-check-label" htmlFor="inlineCheckbox4">
             Delete
         </label>
         <input
@@ -328,7 +328,7 @@ aria-controls="collapse2"
     ></input>
 </div>
 <div class="form-check form-check-inline">
-    <label class="form-check-label" for="inlineCheckbox5">
+    <label class="form-check-label" htmlFor="inlineCheckbox5">
         Export
     </label>
     <input
@@ -380,10 +380,10 @@ aria-controls="collapse2"
     id="collapse4"
     data-bs-parent="#participantsTeam"
 >
-        <td colspan="3">
+        <td colSpan="3">
             <div className="managementOptions">
                 <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="inlineCheckbox1">
+                    <label class="form-check-label" htmlFor="inlineCheckbox1">
                         Create
                     </label>
                     <input
@@ -393,7 +393,7 @@ aria-controls="collapse2"
                 ></input>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2">
+                <label class="form-check-label" htmlFor="inlineCheckbox2">
                     View
                 </label>
                 <input
@@ -404,7 +404,7 @@ aria-controls="collapse2"
             ></input>
         </div>
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="inlineCheckbox3">
+            <label class="form-check-label" htmlFor="inlineCheckbox3">
                 Edit
             </label>
             <input
@@ -414,7 +414,7 @@ aria-controls="collapse2"
         ></input>
     </div>
     <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox4">
+        <label class="form-check-label" htmlFor="inlineCheckbox4">
             Delete
         </label>
         <input
@@ -424,7 +424,7 @@ aria-controls="collapse2"
     ></input>
 </div>
 <div class="form-check form-check-inline">
-    <label class="form-check-label" for="inlineCheckbox5">
+    <label class="form-check-label" htmlFor="inlineCheckbox5">
         Export
     </label>
     <input
@@ -492,10 +492,10 @@ aria-controls="collapse2"
                         id="collapse5"
                         data-bs-parent="#researchersTeam"
                     >
-                            <td colspan="3">
+                            <td colSpan="3">
                                 <div className="managementOptions">
                                     <div class="form-check form-check-inline">
-                                        <label class="form-check-label" for="inlineCheckbox1">
+                                        <label class="form-check-label" htmlFor="inlineCheckbox1">
                                             Create
                                         </label>
                                         <input
@@ -506,7 +506,7 @@ aria-controls="collapse2"
                                     ></input>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <label class="form-check-label" for="inlineCheckbox2">
+                                    <label class="form-check-label" htmlFor="inlineCheckbox2">
                                         View
                                     </label>
                                     <input
@@ -517,7 +517,7 @@ aria-controls="collapse2"
                                 ></input>
                             </div>
                             <div class="form-check form-check-inline">
-                                <label class="form-check-label" for="inlineCheckbox3">
+                                <label class="form-check-label" htmlFor="inlineCheckbox3">
                                     Edit
                                 </label>
                                 <input
@@ -528,7 +528,7 @@ aria-controls="collapse2"
                             ></input>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label class="form-check-label" for="inlineCheckbox4">
+                            <label class="form-check-label" htmlFor="inlineCheckbox4">
                                 Delete
                             </label>
                             <input
@@ -539,7 +539,7 @@ aria-controls="collapse2"
                         ></input>
                     </div>
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label" for="inlineCheckbox5">
+                        <label class="form-check-label" htmlFor="inlineCheckbox5">
                             Export
                         </label>
                         <input
@@ -563,7 +563,7 @@ aria-controls="collapse2"
                     aria-expanded="false"
                     aria-controls="collapse5"
                 >
-                        Cancel
+        Cancel
                 </button>
             </div>
         </div>
@@ -593,12 +593,12 @@ aria-controls="collapse6"
     <tr
     className="collapse multi-collapse"
     id="collapse6"
-        data-bs-parent="#researchersTeam"
+    data-bs-parent="#researchersTeam"
 >
-        <td colspan="3">
+        <td colSpan="3">
             <div className="managementOptions">
                 <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="inlineCheckbox1">
+                    <label class="form-check-label" htmlFor="inlineCheckbox1">
                         Create
                     </label>
                     <input
@@ -608,7 +608,7 @@ aria-controls="collapse6"
                 ></input>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2">
+                <label class="form-check-label" htmlFor="inlineCheckbox2">
                     View
                 </label>
                 <input
@@ -619,7 +619,7 @@ aria-controls="collapse6"
             ></input>
         </div>
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="inlineCheckbox3">
+            <label class="form-check-label" htmlFor="inlineCheckbox3">
                 Edit
             </label>
             <input
@@ -629,7 +629,7 @@ aria-controls="collapse6"
         ></input>
     </div>
     <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox4">
+        <label class="form-check-label" htmlFor="inlineCheckbox4">
             Delete
         </label>
         <input
@@ -639,7 +639,7 @@ aria-controls="collapse6"
     ></input>
 </div>
 <div class="form-check form-check-inline">
-    <label class="form-check-label" for="inlineCheckbox5">
+    <label class="form-check-label" htmlFor="inlineCheckbox5">
         Export
     </label>
     <input
@@ -668,76 +668,76 @@ aria-controls="collapse6"
         </div>
     </div>
 </td>
-            </tr>
-            <tr
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse7"
-            aria-expanded="false"
-            aria-controls="collapse7"
-        >
-                <td>
-                    <div class="userContainer">
-                        <Link className="user" to={"/Profile"}>
-                            <img className="survaidProfile" src={Jimmy} alt="Jimmy" />
-                            <h6 className="userInfo">Jimmy Liang</h6>
-                        </Link>
-                    </div>
-                </td>
-                <td>Online</td>
-                <td>Create, View, Edit, Export</td>
-            </tr>
-            <tr
-            className="collapse multi-collapse"
-            id="collapse7"
-            data-bs-parent="#researchersTeam"
-        >
-                <td colspan="3">
-                    <div className="managementOptions">
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label" for="inlineCheckbox1">
-                                Create
-                            </label>
-                            <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox1"
-                            checked
-                        ></input>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label" for="inlineCheckbox2">
-                            View
-                        </label>
-                        <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        checked
-                    ></input>
-                </div>
+    </tr>
+    <tr
+    data-bs-toggle="collapse"
+    data-bs-target="#collapse7"
+    aria-expanded="false"
+    aria-controls="collapse7"
+>
+        <td>
+            <div class="userContainer">
+                <Link className="user" to={"/Profile"}>
+                    <img className="survaidProfile" src={Jimmy} alt="Jimmy" />
+                    <h6 className="userInfo">Jimmy Liang</h6>
+                </Link>
+            </div>
+        </td>
+        <td>Online</td>
+        <td>Create, View, Edit, Export</td>
+    </tr>
+    <tr
+    className="collapse multi-collapse"
+    id="collapse7"
+    data-bs-parent="#researchersTeam"
+>
+        <td colSpan="3">
+            <div className="managementOptions">
                 <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="inlineCheckbox3">
-                        Edit
+                    <label class="form-check-label" htmlFor="inlineCheckbox1">
+                        Create
                     </label>
                     <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox3"
+                    id="inlineCheckbox1"
                     checked
                 ></input>
             </div>
             <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox4">
-                    Delete
+                <label class="form-check-label" htmlFor="inlineCheckbox2">
+                    View
                 </label>
                 <input
                 class="form-check-input"
                 type="checkbox"
-                id="inlineCheckbox4"
+                id="inlineCheckbox2"
+                checked
             ></input>
         </div>
         <div class="form-check form-check-inline">
-            <label class="form-check-label" for="inlineCheckbox5">
+            <label class="form-check-label" htmlFor="inlineCheckbox3">
+                Edit
+            </label>
+            <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox3"
+            checked
+        ></input>
+    </div>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label" htmlFor="inlineCheckbox4">
+            Delete
+        </label>
+        <input
+        class="form-check-input"
+        type="checkbox"
+        id="inlineCheckbox4"
+    ></input>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label" htmlFor="inlineCheckbox5">
                 Export
             </label>
             <input
@@ -789,55 +789,55 @@ aria-controls="collapse6"
     id="collapse8"
     data-bs-parent="#researchersTeam"
 >
-        <td colspan="3">
+        <td colSpan="3">
             <div className="managementOptions">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="inlineCheckbox1">
+                <div className="form-check form-check-inline">
+                    <label className="form-check-label" htmlFor="inlineCheckbox1">
                         Create
                     </label>
                     <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="checkbox"
                     id="inlineCheckbox1"
                 ></input>
             </div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label" for="inlineCheckbox2">
+            <div className="form-check form-check-inline">
+                <label className="form-check-label" htmlFor="inlineCheckbox2">
                     View
                 </label>
                 <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 id="inlineCheckbox2"
                 checked
             ></input>
         </div>
-        <div class="form-check form-check-inline">
-            <label class="form-check-label" for="inlineCheckbox3">
+        <div className="form-check form-check-inline">
+            <label className="form-check-label" htmlFor="inlineCheckbox3">
                 Edit
             </label>
             <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             id="inlineCheckbox3"
         ></input>
     </div>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox4">
+    <div className="form-check form-check-inline">
+        <label className="form-check-label" htmlFor="inlineCheckbox4">
             Delete
         </label>
         <input
-        class="form-check-input"
+        className="form-check-input"
         type="checkbox"
         id="inlineCheckbox4"
     ></input>
 </div>
-<div class="form-check form-check-inline">
-    <label class="form-check-label" for="inlineCheckbox5">
+<div className="form-check form-check-inline">
+    <label className="form-check-label" htmlFor="inlineCheckbox5">
         Export
     </label>
     <input
-    class="form-check-input"
+    className="form-check-input"
     type="checkbox"
     id="inlineCheckbox5"
 ></input>
@@ -846,11 +846,11 @@ aria-controls="collapse6"
         <div className="editManagement">
             <button className="remove">Remove Researcher</button>
             <div className="saveCancel">
-                <button class="btn btn-primary save" type="button">
+                <button className="btn btn-primary save" type="button">
                     Save
                 </button>
                 <button
-                class="cancel"
+                className="cancel"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapse8"
                 aria-expanded="false"
@@ -861,9 +861,9 @@ aria-controls="collapse6"
         </div>
     </div>
 </td>
-      </tr>
-  </tbody>
-        </table>
+    </tr>
+        </tbody>
+    </table>
         </div>
         </div>
         </div>

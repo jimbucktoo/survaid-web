@@ -4,11 +4,12 @@ import logo from "../assets/survaid.png";
 import "../App.css";
 import '../firebase/firebase';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged  } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
     const auth = getAuth();
 
     onAuthStateChanged(auth, (user) => {
@@ -25,7 +26,9 @@ const Login = () => {
         console.log(email, password)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                console.log("Signing In")
                 console.log(userCredential)
+                navigate("/Surveys");
             }).catch((error) => {
                 console.log(error)
             })

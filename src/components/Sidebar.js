@@ -2,9 +2,23 @@ import React from "react";
 import logo from "../assets/survaid.png";
 import Alex from "../assets/Alex.jpeg";
 import { Link } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
 function Sidebar() {
+    const navigate = useNavigate();
+
+    function SignOut(){
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            console.log("Signing Out")
+            navigate("/");
+        }).catch((error) => {
+            console.log("Signing Out Error: " + error)
+        });
+    }
+
     return (
         <div className="sideBar">
             <ul className="nav flex-column">
@@ -20,10 +34,10 @@ function Sidebar() {
                             </p>
                         </div>
                     </a>
-                    <li class="navDropdown">
-                        <div class="dropdown">
+                    <li className="navDropdown">
+                        <div className="dropdown">
                             <button
-                            class="btn btn-primary dropdown-toggle surveyDropdown"
+                            className="btn btn-primary dropdown-toggle surveyDropdown"
                             type="button"
                             id="dropdownMenuButton1"
                             data-bs-toggle="dropdown"
@@ -32,7 +46,7 @@ function Sidebar() {
                                 Sleep Apnea Survey
                         </button>
                         <ul
-                        class="dropdown-menu"
+                        className="dropdown-menu"
                         aria-labelledby="dropdownMenuButton1"
                     >
                             <li>
@@ -54,32 +68,32 @@ function Sidebar() {
                     </div>
                 </li>
                 <Link className="navigation" to={"/Surveys"}>
-                    <li class="navigationItem">Survey</li>
+                    <li className="navigationItem">Survey</li>
                 </Link>
                 <Link className="navigation" to={"/Analytics"}>
-                    <li class="navigationItem">Analytics</li>
+                    <li className="navigationItem">Analytics</li>
                 </Link>
                 <Link className="navigation" to={"/Reporting"}>
-                    <li class="navigationItem">Reporting</li>
-                </Link>
-                <Link className="navigation" to={"/Activity"}>
-                    <li class="navigationItem">Activity</li>
+                    <li className="navigationItem">Reporting</li>
                 </Link>
                 <Link className="navigation" to={"/Messaging"}>
-                    <li class="navigationItem">Messaging</li>
+                    <li className="navigationItem">Messaging</li>
                 </Link>
                 <Link className="navigation" to={"/Notifications"}>
-                    <li class="navigationItem">Notifications</li>
+                    <li className="navigationItem">Notifications</li>
                 </Link>
                 <Link className="navigation" to={"/TeamManagement"}>
-                    <li class="navigationItem lastItem">Team Management</li>
+                    <li className="navigationItem lastItem">Team Management</li>
                 </Link>
                 <Link className="createSurveyLink" to={"/CreateSurvey"}>
-                    <li class="createSurvey">+ Create Survey</li>
+                    <li className="createSurvey">+ Create Survey</li>
                 </Link>
+                <div>
+                    <button className="btn btn-danger" onClick={SignOut}>Sign Out</button>
+                </div>
             </ul>
             <Link className="user" to={"/Profile"}>
-                <div class="profile">
+                <div className="profile">
                     <img className="survaidProfile" src={Alex} alt="Profile" />
                     Alex Gallion
                 </div>

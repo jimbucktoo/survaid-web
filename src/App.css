@@ -250,6 +250,12 @@ table thead th {
     text-align: center;
 }
 
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .invite {
     width: 120px;
     border-radius: 5px;

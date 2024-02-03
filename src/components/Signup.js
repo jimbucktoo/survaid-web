@@ -16,11 +16,11 @@ const Signup = () => {
         console.log("SignUp")
         console.log(email, password)
         createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            console.log(userCredential)
-        }).catch((error) => {
-            console.log(error)
-        })
+            .then((userCredential) => {
+                console.log(userCredential)
+            }).catch((error) => {
+                console.log(error)
+            })
     } 
     const database = getDatabase();
     const surveyRef = ref(database, 'surveys/');
@@ -62,16 +62,16 @@ const Signup = () => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
-                    <div className="buttonOptions">         
-                        <button className="btn btn-primary" type="submit">Sign Up</button>
-                    <Link className="forgotPasswordLink" to={"/"}>
-                        <button className="btn btn-danger cancelSignUp" type="submit">Cancel</button>
-                    </Link>
+                        <div className="buttonOptions">         
+                            <button className="btn btn-primary" type="submit">Sign Up</button>
+                            <Link className="forgotPasswordLink" to={"/"}>
+                                <button className="btn btn-danger cancelSignUp" type="submit">Cancel</button>
+                            </Link>
+                        </div>
                     </div>
-                    </div>
-                        </form>
-                    </div>
-                </div>
+                </form>
+            </div>
+        </div>
     );
 }
 
