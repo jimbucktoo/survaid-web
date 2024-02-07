@@ -98,8 +98,8 @@ function Surveys() {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-                            <img className="icon" src={slider} alt="Slider Icon" />
-                            Slider
+                            <img className="icon" src={text} alt="Text" />
+                            Text
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li>
@@ -110,26 +110,26 @@ function Surveys() {
                             </li>
                             <li>
                                 <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={slider} alt="Slider" />
-                                    Slider
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/surveys">
                                     <img className="icon" src={choice} alt="Choice" />
                                     Multiple Choice
                                 </a>
                             </li>
                             <li>
                                 <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={camera} alt="Camera" />
-                                    Camera
+                                    <img className="icon" src={slider} alt="Slider" />
+                                    Slider
                                 </a>
                             </li>
                             <li>
                                 <a className="dropdown-item" href="/surveys">
                                     <img className="icon" src={microphone} alt="Microphone" />
                                     Microphone
+                                </a>
+                            </li>
+                            <li>
+                                <a className="dropdown-item" href="/surveys">
+                                    <img className="icon" src={camera} alt="Camera" />
+                                    Camera
                                 </a>
                             </li>
                         </ul>
