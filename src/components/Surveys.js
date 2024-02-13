@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { SurveyContext } from "../SurveyContext";
 import text from "../assets/text.png";
 import slider from "../assets/slider.png";
 import choice from "../assets/choice.png";
@@ -18,6 +19,8 @@ import {
 } from "firebase/database";
 
 function Surveys() {
+    const { newSurveyKey } = useContext(SurveyContext);
+    console.log(newSurveyKey)
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const db = getDatabase();

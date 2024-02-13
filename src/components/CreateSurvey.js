@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { SurveyContext } from "../SurveyContext";
 import Sidebar from "./Sidebar";
 import "../App.css";
 import ImagePicker from "./ImagePicker";
@@ -6,6 +7,7 @@ import { getDatabase, ref as databaseRef, push } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
 function CreateSurvey() {
+    const { setNewSurveyKey } = useContext(SurveyContext);
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [price, setPrice] = useState("");
@@ -36,6 +38,7 @@ function CreateSurvey() {
         });
 
         const newSurveyKey = newSurveyRef.key;
+        setNewSurveyKey(newSurveyKey);
         console.log(newSurveyKey);
     }
 
