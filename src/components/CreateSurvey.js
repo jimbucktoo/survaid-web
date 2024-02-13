@@ -2,28 +2,41 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import "../App.css";
 import ImagePicker from "./ImagePicker";
-import { getDatabase, ref, set, push } from "firebase/database";
+import { getDatabase, ref as databaseRef, push } from "firebase/database";
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
-function Surveys() {
+function CreateSurvey() {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
+    const [price, setPrice] = useState("");
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const db = getDatabase();
+    const storage = getStorage();
 
-    function writeQuestion() {
-        console.log(title);
-        console.log(desc);
-        set(ref(db, "/question"), {
-            title: title,
-            description: desc,
-        });
+    const handleFileSelect = (file) => {
+        setSelectedFile(file);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (selectedFile) {
+            uploadBytes(storageRef(storage, "testImage"), selectedFile).then((snapshot) => {
+                console.log("Image Uploaded");
+            });
+        }
+        pushQuestion();
     }
 
     function pushQuestion() {
-        push(ref(db, "/question"), {
+        const newSurveyRef = push(databaseRef(db, "/surveys"), {
             title: title,
             description: desc,
+            price: price,
         });
+
+        const newSurveyKey = newSurveyRef.key;
+        console.log(newSurveyKey);
     }
 
     return (
@@ -33,36 +46,30 @@ function Surveys() {
                 <div className="headerBar">
                     <h5 className="header">Survey:</h5>
                     <div>
-                        <button
-                        className="btn btn-primary save"
-                        type="button"
-                        onClick={pushQuestion}
-                    >
-                            Save
-                    </button>
-                    <button className="cancel">Cancel</button>
+                        <button className="btn btn-primary save" type="submit" form="surveyForm">Save</button>
+                        <button className="cancel">Cancel</button>
+                    </div>
                 </div>
-            </div>
-            <div className="question">
-                <div className="questionInputs">
-                    <div className="inputGroup">
-                        <label className="questionInputLabel">Survey Title: </label>
-                        <input className="questionInput" />
+                <form id="surveyForm" className="survey" onSubmit={handleSubmit}>
+                    <div className="surveyInputs">
+                        <div className="inputGroup">
+                            <label className="surveyInputLabel">Survey Title: </label>
+                            <input className="surveyInput" value={title} onChange={(e) => setTitle(e.target.value)} />
+                        </div>
+                        <div className="inputGroup">
+                            <label className="surveyInputLabel">Survey Description: </label>
+                            <input className="surveyInput" value={desc} onChange={(e) => setDesc(e.target.value)} />
+                        </div>
+                        <div className="inputGroup">
+                            <label className="surveyInputLabel">Survey Price: </label>
+                            <input className="surveyInput" value={price} onChange={(e) => setPrice(e.target.value)} />
+                        </div>
+                        <ImagePicker onFileSelect={handleFileSelect} />
                     </div>
-                    <div className="inputGroup">
-                        <label className="questionInputLabel">Survey Description: </label>
-                        <input className="questionInput" />
-                    </div>
-                    <div className="inputGroup">
-                        <label className="questionInputLabel">Price: </label>
-                        <input className="questionInput" />
-                    </div>
-                    <ImagePicker />
-                </div>
+                </form>
             </div>
         </div>
-    </div>
     );
 }
 
-export default Surveys;
+export default CreateSurvey;

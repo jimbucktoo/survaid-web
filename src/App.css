@@ -403,7 +403,7 @@ table thead th {
 .questionInputLabel {
     color: black;
     align-items: left;
-    margin-top: 20px;
+    margin: 20px 0px 10px 0px;
     font-weight: bold;
 }
 
@@ -488,6 +488,13 @@ table thead th {
 .saveOption {
     width: 100px;
     border-radius: 5px;
+}
+
+.selectedImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .sideBar {
@@ -583,6 +590,36 @@ table thead th {
     font-size: 36px;
     font-weight: bold;
     margin: 0px auto;
+}
+
+.survey {
+    display: flex;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 100px auto 20px auto;
+    justify-content: space-around;
+}
+
+.surveyInput {
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    width: 300px;
+}
+
+.surveyInputLabel {
+    color: black;
+    align-items: left;
+    margin: 20px 0px 10px 0px;
+    font-weight: bold;
+}
+
+.surveyInputs {
+    text-align: left;
 }
 
 .surveyDropdown {
