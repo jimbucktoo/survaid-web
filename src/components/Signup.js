@@ -1,37 +1,34 @@
-import React, {useState} from 'react';
-import { Link } from "react-router-dom";
-import logo from "../assets/survaid.png";
-import "../App.css";
-import { getDatabase, ref, onValue } from "firebase/database";
-import '../firebase/firebase';
-import {getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import React, {useState} from 'react'
+import { Link } from "react-router-dom"
+import logo from "../assets/survaid.png"
+import { useNavigate } from "react-router-dom"
+import { getDatabase, ref, set } from "firebase/database"
+import {getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import '../firebase/firebase'
+import "../App.css"
 
 const Signup = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword]  = useState('')
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword]  = useState('');
-    const auth = getAuth();
+    const navigate = useNavigate()
+    const auth = getAuth()
+    const db = getDatabase()
+
     const SignUp = (e) => {
-        e.preventDefault();
-        console.log("SignUp")
-        console.log(email, password)
+        e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(userCredential)
+                const user = userCredential.user
+                set(ref(db, "/users/" + user.uid), {
+                    email: user.email
+                })
+                console.log(user)
+                navigate("/Surveys")
             }).catch((error) => {
                 console.log(error)
             })
     } 
-    const database = getDatabase();
-    const surveyRef = ref(database, 'surveys/');
-    onValue(surveyRef, (snapshot) => {
-        const data = snapshot.val();
-        if( !!data ) {
-            console.log(data);
-        } else {
-            console.log('Data not found');
-        }  
-    });
 
     return (
         <div className="signUpComponent">
@@ -72,7 +69,7 @@ const Signup = () => {
                 </form>
             </div>
         </div>
-    );
+    )
 }
 
-export default Signup;
+export default Signup

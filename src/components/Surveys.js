@@ -1,76 +1,42 @@
-import React, { useState, useContext } from "react";
-import { SurveyContext } from "../SurveyContext";
-import text from "../assets/text.png";
-import slider from "../assets/slider.png";
-import choice from "../assets/choice.png";
-import camera from "../assets/camera.png";
-import microphone from "../assets/microphone.png";
-import Sidebar from "./Sidebar";
-import "../App.css";
-import { getAuth, onAuthStateChanged  } from "firebase/auth";
-import {
-    getDatabase,
-    ref,
-    child,
-    get,
-    onValue,
-    set,
-    push
-} from "firebase/database";
+import React, { useState, useContext } from "react"
+import { SurveyContext } from "../SurveyContext"
+import text from "../assets/text.png"
+import slider from "../assets/slider.png"
+import choice from "../assets/choice.png"
+import camera from "../assets/camera.png"
+import microphone from "../assets/microphone.png"
+import Sidebar from "./Sidebar"
+import { getAuth, onAuthStateChanged  } from "firebase/auth"
+import { getDatabase, ref, push } from "firebase/database"
+import "../App.css"
 
 function Surveys() {
-    const { newSurveyKey } = useContext(SurveyContext);
-    console.log(newSurveyKey)
-    const [title, setTitle] = useState("");
-    const [desc, setDesc] = useState("");
-    const db = getDatabase();
-    const dbRef = ref(db, "/surveys");
-    const auth = getAuth();
+    const [title, setTitle] = useState("")
+    const [desc, setDesc] = useState("")
+    const [selectedQuestionType, setSelectedQuestionType] = useState(null)
+    const { newSurveyKey } = useContext(SurveyContext)
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            console.log(user.email + ": Signed In")
-        } else {
-            console.log("Signed Out")
-        }
-    });
-
-    function readDataOnceWithObserver(){
-        onValue(dbRef, (snapshot) => {
-            const data = snapshot.val();
-            console.log(data);
-        });
+    if(newSurveyKey) {
+        console.log(newSurveyKey)
     }
 
-    function readDataOnce() {
-        const dbRef = ref(getDatabase());
-        get(child(dbRef, "/surveys"))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    console.log(snapshot.val());
-                } else {
-                    console.log("No data available");
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }
+    const auth = getAuth()
+    const db = getDatabase()
 
-    function writeData() {
-        console.log(title);
-        console.log(desc);
-        set(ref(db, "/question"), {
-            title: title,
-            description: desc,
-        });
-    }
+    function pushQuestion() {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const newQuestionRef = push(ref(db, "/questions"), {
+                    title: title,
+                    description: desc,
+                })
 
-    function updateData() {
-        push(ref(db, "/question"), {
-            title: title,
-            description: desc,
-        });
+                const newQuestionKey = newQuestionRef.key
+                console.log("Question Created: " + newQuestionKey)
+            } else {
+                console.log("Not Authenticated")
+            }
+        })
     }
 
     return (
@@ -83,7 +49,7 @@ function Surveys() {
                         <button
                         className="btn btn-primary save"
                         type="button"
-                        onClick={updateData}
+                        onClick={pushQuestion}
                     >
                             Save
                     </button>
@@ -97,76 +63,69 @@ function Surveys() {
                         <button
                         className="btn btn-secondary dropdown-toggle questionTypeDropdown"
                         type="button"
-                        id="dropdownMenuButton1"
+                        id="dropdownMenuButtonSurveys"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-                            <img className="icon" src={text} alt="Text" />
-                            Text
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li>
-                                <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={text} alt="Text" />
-                                    Text
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={choice} alt="Choice" />
-                                    Multiple Choice
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={slider} alt="Slider" />
-                                    Slider
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={microphone} alt="Microphone" />
-                                    Microphone
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="/surveys">
-                                    <img className="icon" src={camera} alt="Camera" />
-                                    Camera
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="questionInputs">
-                    <div className="inputGroup">
-                        <label className="questionInputLabel">Question Title: </label>
-                        <input
-                        className="questionInput"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
+                            {selectedQuestionType ? (
+                                <>
+                                <img className="icon" src={selectedQuestionType.icon} alt={selectedQuestionType.name} />
+                                {selectedQuestionType.name}
+                                </>
+                            ) : (
+                                <>
+                                <img className="icon" src={text} alt="Text" />
+                                Text
+                                </>
+                            )}
+                            </button>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonSurveys">
+                                {[
+                                    { name: "Text", icon: text },
+                                    { name: "Multiple Choice", icon: choice },
+                                    { name: "Slider", icon: slider },
+                                    { name: "Microphone", icon: microphone },
+                                    { name: "Camera", icon: camera },
+                                ].map((questionType, index) => (
+                                    <li key={index}>
+                                        <button className="dropdown-item" onClick={() => setSelectedQuestionType(questionType)}>
+                                            <img className="icon" src={questionType.icon} alt={questionType.name} />
+                                            {questionType.name}
+                                        </button>
+                                    </li>
+                                ))}
+                                </ul>
+                            </div>
                         </div>
-                        <div className="inputGroup">
-                            <label className="questionInputLabel">
-                                Question Description:{" "}
-                            </label>
-                            <input
-                            className="questionInput"
-                            value={desc}
-                            onChange={(e) => setDesc(e.target.value)}
-                        />
+                        <div className="questionInputs">
+                            <div className="inputGroup">
+                                <label className="questionInputLabel">Question Title: </label>
+                                <input
+                                className="questionInput"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                                </div>
+                                <div className="inputGroup">
+                                    <label className="questionInputLabel">
+                                        Question Description:{" "}
+                                    </label>
+                                    <input
+                                    className="questionInput"
+                                    value={desc}
+                                    onChange={(e) => setDesc(e.target.value)}
+                                />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button className="addQuestion" type="button">
+                                    + Add Question
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <button className="addQuestion" type="button">
-                            + Add Question
-                        </button>
-                    </div>
-                </div>
-            </div>
-    );
+    )
 }
 
-export default Surveys;
+export default Surveys

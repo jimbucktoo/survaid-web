@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
 const ImagePicker = ({onFileSelect}) => {
-
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [selectedFile, setSelectedFile] = useState(null)
 
     const handleFileChange = (e) => {
-        setSelectedFile(e.target.files[0]);
-    };
+        setSelectedFile(e.target.files[0])
+    }
 
     useEffect(() => {
-        onFileSelect(selectedFile);
-    }, [selectedFile, onFileSelect]);
+        onFileSelect(selectedFile)
+    }, [selectedFile, onFileSelect])
 
     return (
         <div>
-            <label className="questionInputLabel">Survey Image: </label>
+            <label className="questionInputLabel">Image: </label>
             <input className="form-control" type="file" onChange={handleFileChange} />
             {selectedFile && (
                 <div className="selectedImage">
@@ -22,7 +21,7 @@ const ImagePicker = ({onFileSelect}) => {
                 </div>
             )}
             </div>
-    );
-};
+    )
+}
 
-export default ImagePicker;
+export default ImagePicker

@@ -142,7 +142,6 @@ table thead th {
 .editGraphInput {
     text-align: left;
     width: 30%;
-    margin: 10px;
     box-sizing: border-box;
 }
 
@@ -268,12 +267,6 @@ table thead th {
     border-bottom: 1px solid #000000;
 }
 
-.loginComponent {
-    background-color: #000000;
-    width: 100vw;
-    height: 100vh;
-}
-
 .main {
     background-color: #ffffff;
     display: flex;
@@ -383,6 +376,8 @@ table thead th {
 
 .question {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     border: 1px solid #000000;
     border-radius: 5px;
     background-color: #ffffff;
@@ -390,7 +385,6 @@ table thead th {
     width: 90%;
     padding: 40px;
     margin: 100px auto 20px auto;
-    justify-content: space-around;
 }
 
 .questionInput {
@@ -403,16 +397,12 @@ table thead th {
 .questionInputLabel {
     color: black;
     align-items: left;
-    margin: 20px 0px 10px 0px;
+    margin-top: 20px;
     font-weight: bold;
 }
 
 .questionInputs {
     text-align: left;
-}
-
-.questionType {
-
 }
 
 .questionTypeDropdown {
@@ -508,6 +498,13 @@ table thead th {
     position: fixed;
 }
 
+.signInComponent {
+    background-color: #000000;
+    width: 100vw;
+    height: 100vh;
+}
+
+
 .signUp {
     margin-top: 30px;
 }
@@ -594,6 +591,8 @@ table thead th {
 
 .survey {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     border: 1px solid #000000;
     border-radius: 5px;
     background-color: #ffffff;
@@ -601,7 +600,6 @@ table thead th {
     width: 90%;
     padding: 40px;
     margin: 100px auto 20px auto;
-    justify-content: space-around;
 }
 
 .surveyInput {
@@ -614,7 +612,7 @@ table thead th {
 .surveyInputLabel {
     color: black;
     align-items: left;
-    margin: 20px 0px 10px 0px;
+    margin-top: 20px;
     font-weight: bold;
 }
 

@@ -1,47 +1,37 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import logo from "../assets/survaid.png";
-import "../App.css";
-import '../firebase/firebase';
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged  } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react'
+import { Link } from "react-router-dom"
+import logo from "../assets/survaid.png"
+import { useNavigate } from "react-router-dom"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import '../firebase/firebase'
+import "../App.css"
 
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-    const auth = getAuth();
+const Signin = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            console.log(user.email + ": Signed In")
-        } else {
-            console.log("Signed Out")
-        }
-    });
+    const navigate = useNavigate()
+    const auth = getAuth()
 
-    const Login = (e) => {
-        e.preventDefault();
-        console.log("Login")
-        console.log(email, password)
+    const Signin = (e) => {
+        e.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log("Signing In")
-                console.log(userCredential)
-                navigate("/Surveys");
+                console.log(userCredential.user)
+                navigate("/Surveys")
             }).catch((error) => {
                 console.log(error)
             })
     }
 
     return (
-        <div className="loginComponent">
+        <div className="signInComponent">
             <h1 className="surv">
                 Surv<span className="aid">aid</span>
             </h1>
             <img className="survaidLogo" src={logo} alt="Survaid Logo" />
             <div>
-                <form onSubmit={Login}>
+                <form onSubmit={Signin}>
                     <div className="form-group">
                         <input
                         required
@@ -65,7 +55,7 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div className="buttonOptions">
-                        <button className="btn btn-primary" type="submit">Login</button>
+                        <button className="btn btn-primary" type="submit">Sign In</button>
                     </div>
                 </form>
             </div>
@@ -81,7 +71,7 @@ const Login = () => {
                 </Link>
             </div>
         </div>
-    );
+    )
 }
 
-export default Login;
+export default Signin

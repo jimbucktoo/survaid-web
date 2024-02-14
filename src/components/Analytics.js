@@ -1,10 +1,10 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import pencil from "../assets/pencil.png";
-import trashCan from "../assets/trashCan.png";
-import exportData from "../assets/export.png";
-import { Chart } from "react-google-charts";
-import "../App.css";
+import React from "react"
+import Sidebar from "./Sidebar"
+import pencil from "../assets/pencil.png"
+import trashCan from "../assets/trashCan.png"
+import exportData from "../assets/export.png"
+import { Chart } from "react-google-charts"
+import "../App.css"
 
 export const data = [
     ["Time", "dB"],
@@ -17,7 +17,7 @@ export const data = [
     ["10:30 PM", 60],
     ["10:45 PM", 20],
     ["11:00 PM", 20],
-];
+]
 
 export const options = {
     title: "Sleep Apnea",
@@ -33,7 +33,7 @@ export const options = {
     },
     colors: ["#026eff"],
     legend: "none",
-};
+}
 
 function Analytics() {
     return (
@@ -143,7 +143,7 @@ function Analytics() {
                     </div>
                 </div>
             </div>
-    );
+    )
 }
 
-export default Analytics;
+export default Analytics

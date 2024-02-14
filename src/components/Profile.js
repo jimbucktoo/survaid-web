@@ -1,6 +1,6 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import "../App.css";
+import React from "react"
+import Sidebar from "./Sidebar"
+import "../App.css"
 
 function Profile() {
     return (
@@ -8,7 +8,7 @@ function Profile() {
             <Sidebar />
             <div className="content"></div>
         </div>
-    );
+    )
 }
 
-export default Profile;
+export default Profile
