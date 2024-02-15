@@ -16,12 +16,12 @@ function Surveys() {
     const [selectedQuestionType, setSelectedQuestionType] = useState(null)
     const { newSurveyKey } = useContext(SurveyContext)
 
-    if(newSurveyKey) {
-        console.log(newSurveyKey)
-    }
-
     const auth = getAuth()
     const db = getDatabase()
+
+    if (newSurveyKey) {
+        console.log(newSurveyKey)
+    }
 
     function pushQuestion() {
         onAuthStateChanged(auth, (user) => {
@@ -56,7 +56,7 @@ function Surveys() {
                     <button className="cancel">Cancel</button>
                 </div>
             </div>
-            <div className="question">
+            <form id="questionForm" className="question">
                 <div className="questionType">
                     <h6 className="questionInputLabel">Question Type: </h6>
                     <div className="dropdown">
@@ -97,27 +97,29 @@ function Surveys() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="questionInputs">
+                        <div className="formInputs">
                             <div className="inputGroup">
-                                <label className="questionInputLabel">Question Title: </label>
+                                <label className="formInputLabel">Question Title: </label>
                                 <input
-                                className="questionInput"
+                                name="title"
+                                className="formInput"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                             />
                                 </div>
                                 <div className="inputGroup">
-                                    <label className="questionInputLabel">
+                                    <label className="formInputLabel">
                                         Question Description:{" "}
                                     </label>
                                     <input
-                                    className="questionInput"
+                                    name="description"
+                                    className="formInput"
                                     value={desc}
                                     onChange={(e) => setDesc(e.target.value)}
                                 />
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                             <div>
                                 <button className="addQuestion" type="button">
                                     + Add Question

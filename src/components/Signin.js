@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import logo from "../assets/survaid.png"
 import { useNavigate } from "react-router-dom"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-import '../firebase/firebase'
+import "../firebase/firebase"
 import "../App.css"
 
 const Signin = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -17,8 +17,7 @@ const Signin = () => {
         e.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(userCredential.user)
-                navigate("/Surveys")
+                navigate("/Survey")
             }).catch((error) => {
                 console.log(error)
             })
@@ -61,7 +60,7 @@ const Signin = () => {
             </div>
             <div className="signUp">
                 <Link className="signUpLink" to={"/SignUp"}>
-                    Don't have an account?{" "}
+                    Don"t have an account?{" "}
                     <span className="signUpNow">Sign up now</span>
                 </Link>
             </div>

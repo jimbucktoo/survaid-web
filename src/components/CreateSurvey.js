@@ -27,7 +27,7 @@ function CreateSurvey() {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (selectedFile) {
-            uploadBytes(storageRef(storage, "testImage"), selectedFile).then((snapshot) => {
+            uploadBytes(storageRef(storage, "/images/surveys/testImage"), selectedFile).then((snapshot) => {
             })
         }
         pushSurvey()
@@ -45,8 +45,7 @@ function CreateSurvey() {
 
                 const newSurveyKey = newSurveyRef.key
                 setNewSurveyKey(newSurveyKey)
-                console.log("Survey Created: " + newSurveyKey)
-                navigate("/Surveys")
+                navigate("/Survey")
             } else {
                 console.log("Not Authenticated")
             }
@@ -65,20 +64,23 @@ function CreateSurvey() {
                     </div>
                 </div>
                 <form id="surveyForm" className="survey" onSubmit={handleSubmit}>
-                    <div className="surveyInputs">
+                    <div className="formInputs">
                         <div className="inputGroup">
-                            <label className="surveyInputLabel">Title: </label>
-                            <input className="surveyInput" value={title} onChange={(e) => setTitle(e.target.value)} />
+                            <label className="formInputLabel">Title: </label>
+                            <input className="formInput" value={title} onChange={(e) => setTitle(e.target.value)} />
                         </div>
                         <div className="inputGroup">
-                            <label className="surveyInputLabel">Description: </label>
-                            <input className="surveyInput" value={desc} onChange={(e) => setDesc(e.target.value)} />
+                            <label className="formInputLabel">Description: </label>
+                            <input className="formInput" value={desc} onChange={(e) => setDesc(e.target.value)} />
                         </div>
                         <div className="inputGroup">
-                            <label className="surveyInputLabel">Price: </label>
-                            <input className="surveyInput" value={price} onChange={(e) => setPrice(e.target.value)} />
+                            <label className="formInputLabel">Price: </label>
+                            <input className="formInput" value={price} onChange={(e) => setPrice(e.target.value)} />
                         </div>
-                        <ImagePicker onFileSelect={handleFileSelect} />
+                        <div className="inputGroup">
+                            <label className="formInputLabel">Image: </label>
+                            <ImagePicker onFileSelect={handleFileSelect} />
+                        </div>
                     </div>
                 </form>
             </div>

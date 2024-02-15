@@ -1,15 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState} from "react"
 import { Link } from "react-router-dom"
 import logo from "../assets/survaid.png"
 import { useNavigate } from "react-router-dom"
 import { getDatabase, ref, set } from "firebase/database"
 import {getAuth, createUserWithEmailAndPassword } from "firebase/auth"
-import '../firebase/firebase'
+import "../firebase/firebase"
 import "../App.css"
 
 const Signup = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword]  = useState('')
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword]  = useState("")
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -21,10 +23,12 @@ const Signup = () => {
             .then((userCredential) => {
                 const user = userCredential.user
                 set(ref(db, "/users/" + user.uid), {
-                    email: user.email
+                    email: user.email,
+                    firstName: firstName,
+                    lastName: lastName
                 })
                 console.log(user)
-                navigate("/Surveys")
+                navigate("/Survey")
             }).catch((error) => {
                 console.log(error)
             })
@@ -38,6 +42,28 @@ const Signup = () => {
             <img className="survaidLogo" src={logo} alt="Survaid Logo" />
             <div>
                 <form onSubmit={SignUp}>
+                    <div className="form-group">
+                        <input
+                        required
+                        name="firstName"
+                        type="text"
+                        className="form-control inputAuth"
+                        placeholder="First Name"
+                        pattern="[A-Za-z]+"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}/>
+                    </div>
+                    <div className="form-group">
+                        <input
+                        required
+                        name="lastName"
+                        type="text"
+                        className="form-control inputAuth"
+                        placeholder="Last Name"
+                        pattern="[A-Za-z]+"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}/>
+                    </div>
                     <div className="form-group">
                         <input
                         required

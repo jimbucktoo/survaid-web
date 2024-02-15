@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react"
 import { SurveyContext } from "../SurveyContext"
 import logo from "../assets/survaid.png"
-import Alex from "../assets/Alex.jpeg"
+import Black from "../assets/black.jpg"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { getDatabase, ref, child, get } from "firebase/database"
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
+import { getDatabase, ref as databaseRef, child, get } from "firebase/database"
+import { getStorage, getDownloadURL, ref as storageRef } from "firebase/storage"
 import "../App.css"
 
 function Sidebar() {
@@ -13,9 +14,14 @@ function Sidebar() {
     const [selectedSurvey, setSelectedSurvey] = useState(null)
     const { setNewSurveyKey } = useContext(SurveyContext)
 
+    const [displayName, setDisplayName] = useState("")
+    const [email, setEmail] = useState("")
+    const [imageUrl, setImageUrl] = useState(null)
+
     const navigate = useNavigate()
     const auth = getAuth()
-    const dbRef = ref(getDatabase())
+    const dbRef = databaseRef(getDatabase())
+    const storage = getStorage()
 
     function loadSurvey(survey) {
         setSelectedSurvey(survey.title)
@@ -35,7 +41,26 @@ function Sidebar() {
     useEffect(() => {
         function getSurveys() {
             onAuthStateChanged(auth, (user) => {
-                if(user) {
+                if (user) {
+                    const profilePicture = storageRef(storage, "images/users/" + user.uid + "/profile")
+                    getDownloadURL(profilePicture)
+                        .then((url) => {
+                            setImageUrl(url)
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                        })
+
+                    get(child(dbRef, "/users/" + user.uid))
+                        .then((snapshot) => {
+                            const userData = snapshot.val()
+                            setDisplayName(userData.firstName + " " + userData.lastName)
+                            setEmail(userData.email)
+                        })
+                        .catch((error) => {
+                            console.log(error)
+                        })
+
                     get(child(dbRef, "/surveys"))
                         .then((snapshot) => {
                             if (snapshot.exists()) {
@@ -58,7 +83,7 @@ function Sidebar() {
             })
         }
         getSurveys()
-    }, [auth, dbRef])
+    }, [auth, dbRef, storage])
 
     return (
         <div className="sideBar">
@@ -95,7 +120,7 @@ function Sidebar() {
                             </ul>
                         </div>
                     </li>
-                    <Link className="navigation" to={"/Surveys"}>
+                    <Link className="navigation" to={"/Survey"}>
                         <li className="navigationItem">Survey</li>
                     </Link>
                     <Link className="navigation" to={"/Analytics"}>
@@ -117,9 +142,9 @@ function Sidebar() {
                     </div>
                 </ul>
                 <Link className="user" to={"/Profile"}>
-                    <div className="profile">
-                        <img className="survaidProfile" src={Alex} alt="Profile" />
-                        Alex Gallion
+                    <div className="profileSidebar">
+                        <img className="survaidProfile" src={imageUrl ? imageUrl : Black} alt="Profile" />
+                        {displayName === "" ? email : displayName}
                     </div>
                 </Link>
             </div>

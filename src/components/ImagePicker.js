@@ -12,8 +12,7 @@ const ImagePicker = ({onFileSelect}) => {
     }, [selectedFile, onFileSelect])
 
     return (
-        <div>
-            <label className="questionInputLabel">Image: </label>
+        <div className="imagePicker">
             <input className="form-control" type="file" onChange={handleFileChange} />
             {selectedFile && (
                 <div className="selectedImage">

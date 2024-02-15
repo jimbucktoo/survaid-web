@@ -60,7 +60,7 @@ function Analytics() {
                         Trends in Sleep Volume Over Time
                     </h6>
                     <div className="graphOptions">
-                        <button class="iconButton">
+                        <button className="iconButton">
                             <img className="edit" src={pencil} alt="Edit" />
                         </button>
                         <button className="iconButton">

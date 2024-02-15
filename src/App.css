@@ -196,6 +196,24 @@ table thead th {
     color: #026eff;
 }
 
+.formInput {
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    width: 300px;
+}
+
+.formInputLabel {
+    color: black;
+    align-items: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.formInputs{
+    text-align: left;
+}
+
 .graph {
     display: flex;
     border: 1px solid #000000;
@@ -240,6 +258,10 @@ table thead th {
 .iconButton {
     background-color: #ffffff;
     border: none;
+}
+
+.imagePicker {
+    margin-top: 10px;
 }
 
 .inputAuth {
@@ -368,6 +390,35 @@ table thead th {
 
 .profile {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 100px auto 20px auto;
+    color: #000000;
+}
+
+.profileInfo {
+}
+
+.profileInfoSection {
+    margin-top: 20px;
+}
+
+.profilePicture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.profileSidebar {
+    display: flex;
     align-items: center;
     margin-left: 1rem;
     margin-bottom: 1rem;
@@ -385,24 +436,6 @@ table thead th {
     width: 90%;
     padding: 40px;
     margin: 100px auto 20px auto;
-}
-
-.questionInput {
-    border: none;
-    border-bottom: 1px solid #000000;
-    outline: none;
-    width: 300px;
-}
-
-.questionInputLabel {
-    color: black;
-    align-items: left;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.questionInputs {
-    text-align: left;
 }
 
 .questionTypeDropdown {
@@ -600,24 +633,6 @@ table thead th {
     width: 90%;
     padding: 40px;
     margin: 100px auto 20px auto;
-}
-
-.surveyInput {
-    border: none;
-    border-bottom: 1px solid #000000;
-    outline: none;
-    width: 300px;
-}
-
-.surveyInputLabel {
-    color: black;
-    align-items: left;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.surveyInputs {
-    text-align: left;
 }
 
 .surveyDropdown {
