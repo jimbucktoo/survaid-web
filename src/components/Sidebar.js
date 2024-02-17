@@ -3,39 +3,26 @@ import { SurveyContext } from "../SurveyContext"
 import logo from "../assets/survaid.png"
 import Black from "../assets/black.jpg"
 import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
+import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { getDatabase, ref as databaseRef, child, get } from "firebase/database"
 import { getStorage, getDownloadURL, ref as storageRef } from "firebase/storage"
 import "../App.css"
 
 function Sidebar() {
     const [surveys, setSurveys] = useState([])
-    const [selectedSurvey, setSelectedSurvey] = useState(null)
-    const { setNewSurveyKey } = useContext(SurveyContext)
+    const { newSurveyTitle, setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
 
     const [displayName, setDisplayName] = useState("")
     const [email, setEmail] = useState("")
     const [imageUrl, setImageUrl] = useState(null)
 
-    const navigate = useNavigate()
     const auth = getAuth()
     const dbRef = databaseRef(getDatabase())
     const storage = getStorage()
 
     function loadSurvey(survey) {
-        setSelectedSurvey(survey.title)
+        setNewSurveyTitle(survey.title)
         setNewSurveyKey(survey.key)
-    }
-
-    function SignOut() {
-        signOut(auth)
-            .then(() => {
-                navigate("/")
-            })
-            .catch((error) => {
-                console.log(error)
-            })
     }
 
     useEffect(() => {
@@ -109,7 +96,7 @@ function Sidebar() {
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
-                                {selectedSurvey || "Select Survey"}
+                                {newSurveyTitle}
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonSidebar">
                             {surveys.map((survey) => (
@@ -135,11 +122,6 @@ function Sidebar() {
                     <Link className="createSurveyLink" to={"/CreateSurvey"}>
                         <li className="createSurvey">+ Create Survey</li>
                     </Link>
-                    <div>
-                        <button className="btn btn-danger" onClick={SignOut}>
-                            Sign Out
-                        </button>
-                    </div>
                 </ul>
                 <Link className="user" to={"/Profile"}>
                     <div className="profileSidebar">

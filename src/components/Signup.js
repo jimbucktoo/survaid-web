@@ -25,9 +25,9 @@ const Signup = () => {
                 set(ref(db, "/users/" + user.uid), {
                     email: user.email,
                     firstName: firstName,
-                    lastName: lastName
+                    lastName: lastName,
+                    role: "Researcher"
                 })
-                console.log(user)
                 navigate("/Survey")
             }).catch((error) => {
                 console.log(error)

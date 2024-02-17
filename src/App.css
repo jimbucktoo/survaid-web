@@ -57,6 +57,10 @@ table thead th {
     font-weight: bold;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .buttonOptions {
     margin: 20px 20px 100px 20px;
     background-color: #000000;
@@ -80,6 +84,12 @@ table thead th {
     background-color: #f3f3f3;
     overflow-y: auto;
     margin-left: 300px;
+    position: relative;
+}
+
+.create {
+    width: 100px;
+    border-radius: 5px;
 }
 
 .createGraph {
@@ -98,13 +108,6 @@ table thead th {
     color: #026eff;
 }
 
-.createTeam {
-    width: 120px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    margin-right: 10px;
-}
-
 .delete {
     width: 24px;
 }
@@ -112,57 +115,6 @@ table thead th {
 .edit {
     width: 24px;
 }
-
-.editGraph {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 20px;
-    margin: 40px auto 40px auto;
-    justify-content: space-around;
-}
-
-.editGraphHeader {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-bottom: 20px;
-}
-
-.editGraphInputs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.editGraphInput {
-    text-align: left;
-    width: 30%;
-    box-sizing: border-box;
-}
-
-.editInputLabel {
-    color: black;
-    align-items: left;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.editInput {
-    border: none;
-    border-bottom: 1px solid #000000;
-    outline: none;
-    width: 100%;
-}
-
-.editGraphTitle {
-    font-weight: bold;
-}
-
 
 .editManagement {
     display: flex;
@@ -214,7 +166,7 @@ table thead th {
     text-align: left;
 }
 
-.graph {
+.fullContainer {
     display: flex;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -225,12 +177,6 @@ table thead th {
     margin: 100px auto 0px auto;
     justify-content: space-around;
     flex-direction: column;
-}
-
-.graphTitle {
-    margin: 0 auto;
-    color: #000000;
-    font-weight: bold;
 }
 
 .header {
@@ -277,16 +223,39 @@ table thead th {
     justify-content: space-between;
 }
 
-.invite {
-    width: 120px;
+.inviteParticipants {
+    width: 160px;
     border-radius: 5px;
     background-color: #f15e23;
     box-shadow: 5px 5px 5px #d3d3d3;
     border: none;
 }
 
+.inviteResearchers {
+    width: 160px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    margin-right: 10px;
+}
+
 .lastItem {
     border-bottom: 1px solid #000000;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    overflow-y: auto;
+    margin-left: 300px;
+}
+
+.loadingTitle {
+    margin-bottom: 20px;
 }
 
 .main {
@@ -299,12 +268,6 @@ table thead th {
     justify-content: space-evenly;
     width: 90%;
     margin: 0 auto;
-}
-
-.managementOptions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 30px;
 }
 
 .navDropdown {
@@ -404,9 +367,6 @@ table thead th {
 }
 
 .profileInfo {
-}
-
-.profileInfoSection {
     margin-top: 20px;
 }
 
@@ -436,6 +396,11 @@ table thead th {
     width: 90%;
     padding: 40px;
     margin: 100px auto 20px auto;
+}
+
+.questionType {
+    display: flex;
+    flex-direction: column;
 }
 
 .questionTypeDropdown {
@@ -500,17 +465,11 @@ table thead th {
 .save {
     width: 100px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
 }
 
 .saveCancel {
     display: flex;
     justify-content: space-between;
-}
-
-.saveOption {
-    width: 100px;
-    border-radius: 5px;
 }
 
 .selectedImage {
@@ -537,6 +496,9 @@ table thead th {
     height: 100vh;
 }
 
+.signOut {
+    margin-top: 20px;
+}
 
 .signUp {
     margin-top: 30px;
@@ -566,6 +528,11 @@ table thead th {
     text-decoration: none;
     color: #f15e23;
     opacity: 100%;
+}
+
+.spin {
+    width: 50px;
+    height: 50px;
 }
 
 .surv {
@@ -689,13 +656,20 @@ table thead th {
 
 @media only screen and (max-width: 1200px) {
     .editGraphInput {
-        width: 45%;
+        width: 90%;
     }
 }
 
 @media only screen and (max-width: 992px) {
+    .editGraphHeader {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
     .editGraphInput {
-        width: 60%;
+        width: 90%;
     }
 }
 

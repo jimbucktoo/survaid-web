@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Sidebar from "./Sidebar"
 import Black from "../assets/black.jpg"
 import { useNavigate } from "react-router-dom"
-import { getAuth, onAuthStateChanged  } from "firebase/auth"
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
 import { getDatabase, ref as databaseRef, get, child } from "firebase/database"
 import { getStorage, getDownloadURL, ref as storageRef } from "firebase/storage"
 import "../App.css"
@@ -15,6 +15,7 @@ function Profile() {
 
     const [displayName, setDisplayName] = useState("")
     const [email, setEmail] = useState("")
+    const [role, setRole] = useState("")
     const [imageUrl, setImageUrl] = useState(null)
 
     onAuthStateChanged(auth, (user) => {
@@ -33,6 +34,7 @@ function Profile() {
                     const userData = snapshot.val()
                     setDisplayName(userData.firstName + " " + userData.lastName)
                     setEmail(userData.email)
+                    setRole(userData.role)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -42,6 +44,16 @@ function Profile() {
 
     function editProfile() {
         navigate("/EditProfile")
+    }
+
+    function SignOut() {
+        signOut(auth)
+            .then(() => {
+                navigate("/")
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     return (
@@ -57,9 +69,13 @@ function Profile() {
                 <div className="profile">
                     <img className="profilePicture" src={imageUrl ? imageUrl : Black} alt="Profile"/>                   
                     <div className="profileInfo">
-                        <div className="profileInfoSection">
-                            <h6>Name: {displayName}</h6>
-                            <h6>Email: {email}</h6>
+                        <h6><span className="bold">Name:</span> {displayName}</h6>
+                        <h6><span className="bold">Role:</span> {role}</h6>
+                        <h6><span className="bold">Email:</span> {email}</h6>
+                        <div className="signOut">
+                            <button className="btn btn-danger" onClick={SignOut}>
+                                Sign Out
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ function CreateSurvey() {
     const [desc, setDesc] = useState("")
     const [price, setPrice] = useState("")
     const [selectedFile, setSelectedFile] = useState(null)
-    const { setNewSurveyKey } = useContext(SurveyContext)
+    const { setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -40,14 +40,14 @@ function CreateSurvey() {
                     title: title,
                     description: desc,
                     price: price,
-                    createdBy: user.uid
+                    createdBy: user.uid,
+                    researchers: [user.uid]
                 })
 
                 const newSurveyKey = newSurveyRef.key
+                setNewSurveyTitle(title)
                 setNewSurveyKey(newSurveyKey)
                 navigate("/Survey")
-            } else {
-                console.log("Not Authenticated")
             }
         })
     }
@@ -59,8 +59,7 @@ function CreateSurvey() {
                 <div className="headerBar">
                     <h5 className="header">Create Survey:</h5>
                     <div>
-                        <button className="btn btn-primary save" type="submit" form="surveyForm">Save</button>
-                        <button className="cancel">Cancel</button>
+                        <button className="btn btn-primary create" type="submit" form="surveyForm">Create</button>
                     </div>
                 </div>
                 <form id="surveyForm" className="survey" onSubmit={handleSubmit}>

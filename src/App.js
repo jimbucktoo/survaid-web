@@ -8,6 +8,7 @@ import TeamManagement from "./components/TeamManagement"
 import CreateSurvey from "./components/CreateSurvey"
 import Profile from "./components/Profile"
 import EditProfile from "./components/EditProfile"
+import Loading from "./components/Loading"
 import { SurveyProvider } from "./SurveyContext"
 import "./App.css"
 
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/CreateSurvey" element={<CreateSurvey />} />
                 <Route path="/Profile" element={<Profile />} />
                 <Route path="/EditProfile" element={<EditProfile />} />
+                <Route path="/Loading" element={<Loading />} />
             </Routes>
         </SurveyProvider>
     )

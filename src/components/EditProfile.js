@@ -4,7 +4,7 @@ import ImagePicker from "./ImagePicker"
 import { useNavigate } from "react-router-dom"
 import { getAuth } from "firebase/auth"
 import { getDatabase, ref as databaseRef, set } from "firebase/database"
-import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage"
+import { getStorage, getDownloadURL, ref as storageRef, uploadBytes } from "firebase/storage"
 import "../App.css"
 
 function EditProfile() {
@@ -27,17 +27,28 @@ function EditProfile() {
         e.preventDefault()
         if (user !== null && selectedFile) {
             uploadBytes(storageRef(storage, "/images/users/" + user.uid + "/profile"), selectedFile).then((snapshot) => {
+                getDownloadURL(snapshot.ref).then((downloadURL) => {
+                    updateUser(downloadURL)
+                }).catch((error) => {
+                    console.error("Error getting download URL:", error)
+                })
             })
         }
-        updateUser()
     }
 
-    function updateUser() {
+    const handleCancel = (e) => {
+        e.preventDefault()
+        navigate("/Profile")
+    }
+
+    function updateUser(downloadURL) {
         if (user !== null) {
             set(databaseRef(db, "/users/" + user.uid), {
                 email: email,
                 firstName: firstName,
-                lastName: lastName
+                lastName: lastName,
+                role: "Researcher",
+                profilePicture: downloadURL
             })
             navigate("/Profile")
         }
@@ -51,7 +62,7 @@ function EditProfile() {
                     <h5 className="header">Edit Profile:</h5>
                     <div>
                         <button className="btn btn-primary save" type="submit" form="surveyForm">Save</button>
-                        <button className="cancel">Cancel</button>
+                        <button className="cancel" type="button" onClick={handleCancel}>Cancel</button>
                     </div>
                 </div>
                 <form id="surveyForm" className="survey" onSubmit={handleSubmit}>

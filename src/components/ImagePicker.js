@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react"
 
-const ImagePicker = ({onFileSelect}) => {
+const ImagePicker = ({ onFileSelect }) => {
     const [selectedFile, setSelectedFile] = useState(null)
 
     const handleFileChange = (e) => {
-        setSelectedFile(e.target.files[0])
+        const file = e.target.files[0]
+        if (file) {
+            const allowedTypes = ["image/png", "image/jpeg", "image/jpg"]
+            if (allowedTypes.includes(file.type)) {
+                setSelectedFile(file)
+            } else {
+                setSelectedFile(null)
+                alert("Please select a PNG, JPG, or JPEG file.")
+            }
+        }
     }
 
     useEffect(() => {
@@ -13,7 +22,7 @@ const ImagePicker = ({onFileSelect}) => {
 
     return (
         <div className="imagePicker">
-            <input className="form-control" type="file" onChange={handleFileChange} />
+            <input className="form-control" type="file" accept="image/png,image/jpeg,image/jpg" onChange={handleFileChange} />
             {selectedFile && (
                 <div className="selectedImage">
                     <img src={URL.createObjectURL(selectedFile)} alt="Preview" width="200" />
