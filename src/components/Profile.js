@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { SurveyContext } from "../SurveyContext"
 import Sidebar from "./Sidebar"
 import Black from "../assets/black.jpg"
 import { useNavigate } from "react-router-dom"
@@ -8,6 +9,7 @@ import { getStorage, getDownloadURL, ref as storageRef } from "firebase/storage"
 import "../App.css"
 
 function Profile() {
+    const { setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
     const navigate = useNavigate()
     const auth = getAuth()
     const dbRef = databaseRef(getDatabase())
@@ -49,6 +51,8 @@ function Profile() {
     function SignOut() {
         signOut(auth)
             .then(() => {
+                setNewSurveyKey(null)
+                setNewSurveyTitle("Select Survey")
                 navigate("/")
             })
             .catch((error) => {

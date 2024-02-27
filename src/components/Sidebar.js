@@ -26,50 +26,48 @@ function Sidebar() {
     }
 
     useEffect(() => {
-        function getSurveys() {
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    const profilePicture = storageRef(storage, "images/users/" + user.uid + "/profile")
-                    getDownloadURL(profilePicture)
-                        .then((url) => {
-                            setImageUrl(url)
-                        })
-                        .catch((error) => {
-                            console.log(error)
-                        })
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const profilePicture = storageRef(storage, "images/users/" + user.uid + "/profile")
+                getDownloadURL(profilePicture)
+                    .then((url) => {
+                        setImageUrl(url)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
 
-                    get(child(dbRef, "/users/" + user.uid))
-                        .then((snapshot) => {
-                            const userData = snapshot.val()
-                            setDisplayName(userData.firstName + " " + userData.lastName)
-                            setEmail(userData.email)
-                        })
-                        .catch((error) => {
-                            console.log(error)
-                        })
+                get(child(dbRef, "/users/" + user.uid))
+                    .then((snapshot) => {
+                        const userData = snapshot.val()
+                        setDisplayName(userData.firstName + " " + userData.lastName)
+                        setEmail(userData.email)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
 
-                    get(child(dbRef, "/surveys"))
-                        .then((snapshot) => {
-                            if (snapshot.exists()) {
-                                const surveysData = []
-                                snapshot.forEach((childSnapshot) => {
-                                    const surveyKey = childSnapshot.key
-                                    const surveyData = childSnapshot.val()
-                                    surveysData.push({ key: surveyKey, ...surveyData })
-                                })
-                                const filteredSurveys = surveysData.filter(
-                                    (survey) => survey.createdBy === user.uid
-                                )
-                                setSurveys(filteredSurveys)
-                            }
-                        })
-                        .catch((error) => {
-                            console.error(error)
-                        })
-                }
-            })
-        }
-        getSurveys()
+                get(child(dbRef, "/surveys"))
+                    .then((snapshot) => {
+                        if (snapshot.exists()) {
+                            const surveysData = []
+                            snapshot.forEach((childSnapshot) => {
+                                const surveyKey = childSnapshot.key
+                                const surveyData = childSnapshot.val()
+                                surveysData.push({ key: surveyKey, ...surveyData })
+                            })
+                            const filteredSurveys = surveysData.filter(
+                                (survey) => survey.createdBy === user.uid
+                            )
+                            setSurveys([])
+                            setSurveys(filteredSurveys)
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error)
+                    })
+            }
+        })
     }, [auth, dbRef, storage])
 
     return (

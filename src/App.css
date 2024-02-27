@@ -32,24 +32,24 @@ table thead th {
 .addQuestion {
     background-color: #ffffff;
     border: 1px solid #000000;
-    margin-top: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #d3d3d3;
     width: 90%;
     height: 60px;
     color: #026eff;
     font-weight: bold;
+    margin-bottom: 40px;
 }
 
 .addQuestion:hover {
     background-color: #026eff;
     border: 1px solid #000000;
-    margin-top: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #d3d3d3;
     width: 90%;
     height: 60px;
     color: #ffffff;
+    margin-bottom: 40px;
 }
 
 .aid {
@@ -108,12 +108,41 @@ table thead th {
     color: #026eff;
 }
 
-.delete {
-    width: 24px;
+.displayQuestion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #d3d3d3;
+    width: 90%;
+    padding: 40px;
+    margin: 0px auto 40px auto;
+}
+
+.displayQuestions {
+    margin-top: 100px;
+}
+
+.displayQuestionLabel {
+    color: #000000;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.displayQuestionType {
+    margin: 16px 20px;
+}
+
+.displayQuestionTypeText {
+    display: inline;
+    color: #000000;
 }
 
 .edit {
-    width: 24px;
+    width: 100px;
+    border-radius: 5px;
 }
 
 .editManagement {
@@ -153,16 +182,15 @@ table thead th {
     border-bottom: 1px solid #000000;
     outline: none;
     width: 300px;
+    margin-bottom: 20px;
 }
 
 .formInputLabel {
-    color: black;
-    align-items: left;
-    margin-top: 20px;
+    color: #000000;
     font-weight: bold;
 }
 
-.formInputs{
+.formInputs {
     text-align: left;
 }
 
@@ -395,7 +423,12 @@ table thead th {
     box-shadow: 5px 5px 5px #d3d3d3;
     width: 90%;
     padding: 40px;
-    margin: 100px auto 20px auto;
+    margin: 40px auto 40px auto;
+}
+
+.questionHeader{
+    color: #000000;
+    font-weight: bold;
 }
 
 .questionType {
@@ -678,4 +711,3 @@ table thead th {
         width: 100%;
     }
 }
-

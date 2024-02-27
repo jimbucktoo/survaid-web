@@ -3,9 +3,9 @@ import { SurveyContext } from "../SurveyContext"
 import Sidebar from "./Sidebar"
 import ImagePicker from "./ImagePicker"
 import { useNavigate } from "react-router-dom"
-import { getDatabase, ref as databaseRef, push } from "firebase/database"
+import { getDatabase, ref as databaseRef, push, serverTimestamp } from "firebase/database"
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage"
-import { getAuth, onAuthStateChanged  } from "firebase/auth"
+import { getAuth } from "firebase/auth"
 import "../App.css"
 
 function CreateSurvey() {
@@ -17,6 +17,7 @@ function CreateSurvey() {
 
     const navigate = useNavigate()
     const auth = getAuth()
+    const user = auth.currentUser
     const db = getDatabase()
     const storage = getStorage()
 
@@ -34,22 +35,21 @@ function CreateSurvey() {
     }
 
     function pushSurvey() {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                const newSurveyRef = push(databaseRef(db, "/surveys"), {
-                    title: title,
-                    description: desc,
-                    price: price,
-                    createdBy: user.uid,
-                    researchers: [user.uid]
-                })
+        if (user) {
+            const newSurveyRef = push(databaseRef(db, "/surveys"), {
+                title: title,
+                description: desc,
+                price: price,
+                createdBy: user.uid,
+                createdAt: serverTimestamp(),
+                researchers: [user.uid]
+            })
 
-                const newSurveyKey = newSurveyRef.key
-                setNewSurveyTitle(title)
-                setNewSurveyKey(newSurveyKey)
-                navigate("/Survey")
-            }
-        })
+            const newSurveyKey = newSurveyRef.key
+            setNewSurveyTitle(title)
+            setNewSurveyKey(newSurveyKey)
+            navigate("/Survey")
+        }
     }
 
     return (
