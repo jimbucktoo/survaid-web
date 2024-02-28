@@ -41,6 +41,7 @@ function CreateSurvey() {
                 description: desc,
                 price: price,
                 createdBy: user.uid,
+                createdByEmail: user.email,
                 createdAt: serverTimestamp(),
                 researchers: [user.uid]
             })
