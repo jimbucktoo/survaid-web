@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar"
 import ImagePicker from "./ImagePicker"
 import { useNavigate } from "react-router-dom"
 import { getDatabase, ref as databaseRef, push, serverTimestamp } from "firebase/database"
-import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage"
+import { getStorage, getDownloadURL, ref as storageRef, uploadBytes } from "firebase/storage"
 import { getAuth } from "firebase/auth"
 import "../App.css"
 
@@ -13,7 +13,7 @@ function CreateSurvey() {
     const [desc, setDesc] = useState("")
     const [price, setPrice] = useState("")
     const [selectedFile, setSelectedFile] = useState(null)
-    const { setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
+    const { newSurveyKey, setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -28,13 +28,17 @@ function CreateSurvey() {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (selectedFile) {
-            uploadBytes(storageRef(storage, "/images/surveys/testImage"), selectedFile).then((snapshot) => {
+            uploadBytes(storageRef(storage, "/images/surveys/" + newSurveyKey + "surveyImage"), selectedFile).then((snapshot) => {
+                getDownloadURL(snapshot.ref).then((downloadURL) => {
+                    pushSurvey(downloadURL)
+                }).catch((error) => {
+                    console.error("Error getting download URL:", error)
+                })
             })
         }
-        pushSurvey()
     }
 
-    function pushSurvey() {
+    function pushSurvey(downloadURL) {
         if (user) {
             const newSurveyRef = push(databaseRef(db, "/surveys"), {
                 title: title,
@@ -43,7 +47,8 @@ function CreateSurvey() {
                 createdBy: user.uid,
                 createdByEmail: user.email,
                 createdAt: serverTimestamp(),
-                researchers: [user.uid]
+                researchers: [user.uid],
+                surveyImage: downloadURL
             })
 
             const newSurveyKey = newSurveyRef.key
