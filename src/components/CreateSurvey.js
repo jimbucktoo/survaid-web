@@ -13,7 +13,7 @@ function CreateSurvey() {
     const [desc, setDesc] = useState("")
     const [price, setPrice] = useState("")
     const [selectedFile, setSelectedFile] = useState(null)
-    const { newSurveyKey, setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
+    const { setNewSurveyTitle, setNewSurveyKey } = useContext(SurveyContext)
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -28,7 +28,7 @@ function CreateSurvey() {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (selectedFile) {
-            uploadBytes(storageRef(storage, "/images/surveys/" + newSurveyKey + "surveyImage"), selectedFile).then((snapshot) => {
+            uploadBytes(storageRef(storage, "/images/surveys/" + Date.now() + "/surveyImage"), selectedFile).then((snapshot) => {
                 getDownloadURL(snapshot.ref).then((downloadURL) => {
                     pushSurvey(downloadURL)
                 }).catch((error) => {
