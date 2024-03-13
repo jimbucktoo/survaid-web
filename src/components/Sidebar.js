@@ -56,8 +56,8 @@ function Sidebar() {
                                 const surveyData = childSnapshot.val()
                                 surveysData.push({ key: surveyKey, ...surveyData })
                             })
-                            const filteredSurveys = surveysData.filter(
-                                (survey) => survey.createdBy === user.uid
+                            const filteredSurveys = surveysData.filter((survey) => 
+                                survey.researchers && survey.researchers.includes(user.uid)
                             )
                             setSurveys([])
                             setSurveys(filteredSurveys)
