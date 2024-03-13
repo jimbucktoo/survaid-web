@@ -48,7 +48,6 @@ function CreateSurvey() {
                 createdByEmail: user.email,
                 createdAt: serverTimestamp(),
                 researchers: [user.uid],
-                status: "Not Started",
                 surveyImage: downloadURL
             })
 
