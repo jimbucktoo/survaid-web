@@ -223,9 +223,9 @@ function TeamManagement() {
                         <React.Fragment key={index}>
                             <tr
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapseResearchers"
+                            data-bs-target={`#collapseResearchers${index}`}
                             aria-expanded="false"
-                            aria-controls="collapseResearchers"
+                            aria-controls={`collapseResearchers${index}`}
                         >
                                 <td>
                                     <div className="userContainer">
@@ -248,7 +248,7 @@ function TeamManagement() {
                                 </tr>
                                 <tr
                                 className="collapse multi-collapse"
-                                id="collapseResearchers"
+                                id={`collapseResearchers${index}`}
                                 data-bs-parent="#researchersTeam"
                             >
                                     <td colSpan="3">
@@ -296,9 +296,9 @@ function TeamManagement() {
                                 <React.Fragment key={index}>
                                     <tr
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapseParticipants"
+                                    data-bs-target={`#collapseParticipants${index}`}
                                     aria-expanded="false"
-                                    aria-controls="collapseParticipants"
+                                    aria-controls={`collapseParticipants${index}`}
                                 >
                                         <td>
                                             <div className="userContainer">
@@ -325,7 +325,7 @@ function TeamManagement() {
                                         </tr>
                                         <tr
                                         className="collapse multi-collapse"
-                                        id="collapseParticipants"
+                                        id={`collapseParticipants${index}`}
                                         data-bs-parent="#participantsTeam"
                                     >
                                             <td colSpan="3">
