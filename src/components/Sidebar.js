@@ -115,10 +115,10 @@ function Sidebar() {
                         <li className="navigationItem">Messaging</li>
                     </Link>
                     <Link className="navigation" to={"/TeamManagement"}>
-                        <li className="navigationItem lastItem">Team Management</li>
+                        <li className="navigationItem">Team Management</li>
                     </Link>
-                    <Link className="createSurveyLink" to={"/CreateSurvey"}>
-                        <li className="createSurvey">+ Create Survey</li>
+                    <Link className="navigation createSurveyLink" to={"/CreateSurvey"}>
+                        <li className="navigationItem lastItem createSurvey">+ Create Survey</li>
                     </Link>
                 </ul>
                 <Link className="user" to={"/Profile"}>

@@ -100,12 +100,14 @@ table thead th {
 }
 
 .createSurvey {
-    margin: 20px auto;
     font-weight: bold;
+    background-color: #026eff;
+    color: #FFFFFF;
 }
 
 .createSurveyLink {
-    color: #026eff;
+    background-color: #026eff;
+    color: #FFFFFF;
 }
 
 .displayQuestion {
@@ -284,6 +286,7 @@ table thead th {
 
 .loadingTitle {
     margin-bottom: 40px;
+    color: #f15e23;
 }
 
 .main {
@@ -312,14 +315,13 @@ table thead th {
 
 .navigationItem {
     border-top: 1px solid #000000;
-    padding: 14px;
+    padding: 18px;
     font-weight: bold;
 }
 
 .navigationItem:hover {
     border-top: 1px solid #000000;
-    border-left: 1px solid #000000;
-    padding: 14px;
+    padding: 18px;
     font-weight: bold;
     background-color: #026eff;
     cursor: grab;

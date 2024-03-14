@@ -5,7 +5,7 @@ import spinnerImage from "../assets/spinner.png";
 function Loading() {
     return (
         <div className="loading">
-            <h5 className="loadingTitle">Please select or create a survey to continue</h5>
+            <h5 className="loadingTitle">Please create or select a survey to continue</h5>
             <div className="spinnerContainer">
                 <img src={spinnerImage} alt="Spinner" className="spinnerImage" />
                 <div className="spinner-border text-primary spin" role="status">
