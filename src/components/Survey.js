@@ -52,6 +52,8 @@ function Survey() {
                 }
                 const updatedQuestionArray = [...questionsArray, questionData]
                 setQuestionsArray(updatedQuestionArray)
+                setTitle("")
+                setDesc("")
                 setIsEditing(true)
             }
         })
@@ -71,6 +73,8 @@ function Survey() {
         update(ref(db, "/surveys/" + newSurveyKey), {
             questions: questionsArray,
         })
+        setTitle("")
+        setDesc("")
         setIsEditing(false)
     }
 
@@ -139,6 +143,9 @@ function Survey() {
                                         {isEditing ? (
                                             <div>
                                                 <div id="questionForm" className="question">
+                                                    <div className="questionHeader">
+                                                        Q{questionsArray.length + 1}:
+                                                    </div>
                                                     <div className="questionType">
                                                         <label className="formInputLabel">Question Type: </label>
                                                         <div className="dropdown">
@@ -212,23 +219,22 @@ function Survey() {
                                                                         onChange={(e) => setDesc(e.target.value)}
                                                                     />
                                                                         </div>
+
+                                                                    </div>
+                                                                    <div className="displayQuestionOptions">
+                                                                        <button className="btn btn-primary" onClick={pushQuestion}>Add Question</button>
                                                                     </div>
                                                                 </div>
-
-                                                                <button
-                                                                className="addQuestion"
-                                                                type="button"
-                                                                onClick={pushQuestion}
-                                                            >
-                                                                    + Add Question
-                                                            </button>
-                                                        </div>
+                                                            </div>
                                         ) : (
                                             questionsArray.length > 0 ? (
                                                 <></>
                                             ):(
                                                 <div>
                                                     <div id="questionForm" className="question">
+                                                        <div className="questionHeader">
+                                                            Q{questionsArray.length + 1}:
+                                                        </div>
                                                         <div className="questionType">
                                                             <label className="formInputLabel">Question Type: </label>
                                                             <div className="dropdown">
@@ -303,21 +309,16 @@ function Survey() {
                                                                         />
                                                                             </div>
                                                                         </div>
+                                                                        <div className="displayQuestionOptions">
+                                                                            <button className="btn btn-primary" onClick={pushQuestion}>Add Question</button>
+                                                                        </div>
                                                                     </div>
-
-                                                                    <button
-                                                                    className="addQuestion"
-                                                                    type="button"
-                                                                    onClick={pushQuestion}
-                                                                >
-                                                                        + Add Question
-                                                                </button>
-                                                            </div>
+                                                                </div>
                                             )
                                         )}
-                                                        </div>
+                                                            </div>
             )}
-                                                    </div>
+                                                        </div>
     )
 }
 

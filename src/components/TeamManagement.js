@@ -23,7 +23,6 @@ function TeamManagement() {
             .then((snapshot) => {
                 if (snapshot.exists()) {
                     var usersData = snapshot.val()
-                    console.log(snapshot.val())
                     const usersArray = Object.entries(usersData)
                     const filteredUsers = usersArray.filter(
                         ([key, user]) => user.email === email
@@ -42,7 +41,6 @@ function TeamManagement() {
         get(child(dbRef, "/surveys/" + newSurveyKey + "/researchers"))
             .then((snapshot) => {
                 if (snapshot.exists()) {
-                    console.log(snapshot.val())
                     var researcherArray = []
                     researcherArray = snapshot.val()
                     researcherArray.push(foundUser)
@@ -62,8 +60,9 @@ function TeamManagement() {
             get(child(dbRef, "/surveys/" + newSurveyKey + "/researchers"))
                 .then((snapshot) => {
                     if (snapshot.exists()) {
-                        console.log(snapshot.val())
                         matchUsers(snapshot.val(), "researchers")
+                    } else {
+                        setUserResearchers([])
                     }
                 })
                 .catch((error) => {
@@ -73,8 +72,9 @@ function TeamManagement() {
             get(child(dbRef, "/surveys/" + newSurveyKey + "/participants"))
                 .then((snapshot) => {
                     if (snapshot.exists()) {
-                        console.log(snapshot.val())
                         matchUsers(snapshot.val(), "participants")
+                    } else {
+                        setUserParticipants([])
                     }
                 })
                 .catch((error) => {
