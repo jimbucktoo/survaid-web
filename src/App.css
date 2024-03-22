@@ -1,733 +1,733 @@
 a {
-    color: #000000;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
 }
 
 a:focus {
-    color: #000000;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #000000;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
 }
 
 body {
-    text-align: center;
-    background-color: #000000;
-    color: #026eff;
-    font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #000000;
+  color: #026eff;
+  font-family: "Roboto", sans-serif;
 }
 
 table {
-    text-align: left;
+  text-align: left;
 }
 
 table thead th {
-    font-weight: bold;
-    border: transparent !important;
+  font-weight: bold;
+  border: transparent !important;
 }
 
 .addQuestion {
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    height: 60px;
-    color: #026eff;
-    font-weight: bold;
-    margin-bottom: 40px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  height: 60px;
+  color: #026eff;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
 
 .addQuestion:hover {
-    background-color: #026eff;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    height: 60px;
-    color: #ffffff;
-    margin-bottom: 40px;
+  background-color: #026eff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  height: 60px;
+  color: #ffffff;
+  margin-bottom: 40px;
 }
 
 .aid {
-    color: #f15e23;
-    font-weight: bold;
+  color: #f15e23;
+  font-weight: bold;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .buttonOptions {
-    margin: 20px 20px 100px 20px;
-    background-color: #000000;
+  margin: 20px 20px 100px 20px;
+  background-color: #000000;
 }
 
 .cancel {
-    margin-left: 10px;
-    font-weight: normal;
-    width: 100px;
-    background: transparent;
-    border: none;
+  margin-left: 10px;
+  font-weight: normal;
+  width: 100px;
+  background: transparent;
+  border: none;
 }
 
 .cancelSignUp {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .content {
-    width: 100%;
-    height: 100vh;
-    background-color: #f3f3f3;
-    overflow-y: auto;
-    margin-left: 300px;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f3f3;
+  overflow-y: auto;
+  margin-left: 300px;
+  position: relative;
 }
 
 .create {
-    width: 100px;
-    border-radius: 5px;
+  width: 100px;
+  border-radius: 5px;
 }
 
 .createGraph {
-    width: 120px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    margin-right: 10px;
+  width: 120px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  margin-right: 10px;
 }
 
 .createSurvey {
-    font-weight: bold;
-    background-color: #026eff;
-    color: #FFFFFF;
+  font-weight: bold;
+  background-color: #026eff;
+  color: #ffffff;
 }
 
 .createSurveyLink {
-    background-color: #026eff;
-    color: #FFFFFF;
+  background-color: #026eff;
+  color: #ffffff;
 }
 
 .displayQuestion {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 0px auto 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 40px;
+  margin: 0px auto 40px auto;
 }
 
 .displayQuestions {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .displayQuestionLabel {
-    color: #000000;
-    width: 300px;
-    margin-bottom: 20px;
-    word-wrap: break-word;
+  color: #000000;
+  width: 300px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .displayQuestionType {
-    margin: 16px 20px;
+  margin: 16px 20px;
 }
 
 .displayQuestionTypeText {
-    display: inline;
-    color: #000000;
+  display: inline;
+  color: #000000;
 }
 
 .edit {
-    width: 100px;
-    border-radius: 5px;
+  width: 100px;
+  border-radius: 5px;
 }
 
 .editManagement {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0px 10px 0px;
 }
 
 .export {
-    width: 120px;
-    border-radius: 5px;
-    background-color: #f15e23;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    border: none;
+  width: 120px;
+  border-radius: 5px;
+  background-color: #f15e23;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  border: none;
 }
 
 .exportData {
-    width: 24px;
+  width: 24px;
 }
 
 .forgotPassword {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .forgotPasswordLink {
-    text-decoration: none;
-    color: #026eff;
+  text-decoration: none;
+  color: #026eff;
 }
 
 .forgotPasswordLink:hover {
-    text-decoration: none;
-    color: #026eff;
+  text-decoration: none;
+  color: #026eff;
 }
 
 .formInput {
-    border: none;
-    border-bottom: 1px solid #000000;
-    outline: none;
-    width: 300px;
-    margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 .formInputLabel {
-    color: #000000;
-    font-weight: bold;
+  color: #000000;
+  font-weight: bold;
 }
 
 .formInputs {
-    text-align: left;
+  text-align: left;
 }
 
 .fullContainer {
-    display: flex;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 20px;
-    margin: 100px auto 0px auto;
-    justify-content: space-around;
-    flex-direction: column;
+  display: flex;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 20px;
+  margin: 100px auto 0px auto;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .header {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .headerBar {
-    display: flex;
-    float: left;
-    padding: 40px 60px;
-    font-weight: bold;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  float: left;
+  padding: 40px 60px;
+  font-weight: bold;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .icon {
-    width: 24px;
-    margin-right: 4px;
+  width: 24px;
+  margin-right: 4px;
 }
 
 .iconButton {
-    background-color: #ffffff;
-    border: none;
+  background-color: #ffffff;
+  border: none;
 }
 
 .imagePicker {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .inputAuth {
-    border-radius: 5px;
-    width: 20%;
-    margin: 10px auto 0px auto;
-    text-align: center;
+  border-radius: 5px;
+  width: 20%;
+  margin: 10px auto 0px auto;
+  text-align: center;
 }
 
 .inputGroup {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .inviteParticipants {
-    width: 160px;
-    border-radius: 5px;
-    background-color: #f15e23;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    border: none;
+  width: 160px;
+  border-radius: 5px;
+  background-color: #f15e23;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  border: none;
 }
 
 .inviteResearchers {
-    width: 160px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    margin-right: 10px;
+  width: 160px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  margin-right: 10px;
 }
 
 .lastItem {
-    border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .loading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #000000;
-    overflow-y: auto;
-    margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  overflow-y: auto;
+  margin-left: 300px;
 }
 
 .loadingTitle {
-    margin-bottom: 40px;
-    color: #f15e23;
+  margin-bottom: 40px;
+  color: #f15e23;
 }
 
 .main {
-    background-color: #ffffff;
-    display: flex;
+  background-color: #ffffff;
+  display: flex;
 }
 
 .management {
-    display: flex;
-    justify-content: space-evenly;
-    width: 90%;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .modalFormGroup {
-    width: 80%; 
+  width: 80%;
 }
 
 .navDropdown {
-    border-top: 1px solid #000000;
+  border-top: 1px solid #000000;
 }
 
 .navigation {
-    color: #000000;
+  color: #000000;
 }
 
 .navigationItem {
-    border-top: 1px solid #000000;
-    padding: 18px;
-    font-weight: bold;
+  border-top: 1px solid #000000;
+  padding: 18px;
+  font-weight: bold;
 }
 
 .navigationItem:hover {
-    border-top: 1px solid #000000;
-    padding: 18px;
-    font-weight: bold;
-    background-color: #026eff;
-    cursor: grab;
-    color: #ffffff;
+  border-top: 1px solid #000000;
+  padding: 18px;
+  font-weight: bold;
+  background-color: #026eff;
+  cursor: grab;
+  color: #ffffff;
 }
 
 .navigationItem:hover .navigation {
-    font-weight: bold;
-    color: #ffffff;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .navigationItemSurveys {
-    border-top: 1px solid #f15e23;
-    border-left: 1px solid #f15e23;
+  border-top: 1px solid #f15e23;
+  border-left: 1px solid #f15e23;
 }
 
 .participant {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 4px solid #f15e23;
-    width: 100%;
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
-    background-color: #f15e23;
-    padding: 10px 0px;
-    border-radius: 15px 15px 0px 0px;
-    font-size: 18px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid #f15e23;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #f15e23;
+  padding: 10px 0px;
+  border-radius: 15px 15px 0px 0px;
+  font-size: 18px;
 }
 
 .participants {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 4px solid #f15e23;
-    width: 100%;
-    text-align: center;
-    color: #f15e23;
-    cursor: pointer;
-    background-color: transparent;
-    font-size: 18px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid #f15e23;
+  width: 100%;
+  text-align: center;
+  color: #f15e23;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
 }
 
 .participantsTeam {
-    display: flex;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 0px auto 20px auto;
-    justify-content: space-around;
+  display: flex;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 40px;
+  margin: 0px auto 20px auto;
+  justify-content: space-around;
 }
 
 .pictureBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .profile {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 100px auto 20px auto;
-    color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 40px;
+  margin: 100px auto 20px auto;
+  color: #000000;
 }
 
 .profileInfo {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .profilePicture {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .profileSidebar {
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .question {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 40px auto 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 40px;
+  margin: 40px auto 40px auto;
 }
 
-.questionHeader{
-    color: #000000;
-    font-weight: bold;
+.questionHeader {
+  color: #000000;
+  font-weight: bold;
 }
 
 .questionType {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .questionTypeDropdown {
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 0px;
-    width: 100%;
-    height: 60px;
-    color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 0px;
+  width: 100%;
+  height: 60px;
+  color: #000000;
 }
 
 .remove {
-    background-color: transparent;
-    color: red;
-    border: none;
+  background-color: transparent;
+  color: red;
+  border: none;
 }
 
 .researcher {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 4px solid #026eff;
-    color: #ffffff;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    background-color: #026eff;
-    padding: 10px 0px;
-    border-radius: 15px 15px 0px 0px;
-    font-size: 18px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid #026eff;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: #026eff;
+  padding: 10px 0px;
+  border-radius: 15px 15px 0px 0px;
+  font-size: 18px;
 }
 
 .researchers {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 4px solid #026eff;
-    color: #026eff;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    background-color: transparent;
-    font-size: 18px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid #026eff;
+  color: #026eff;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
 }
 
 .researchersTeam {
-    display: flex;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 0px auto 20px auto;
-    justify-content: space-around;
+  display: flex;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 40px;
+  margin: 0px auto 20px auto;
+  justify-content: space-around;
 }
 
 .row {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .save {
-    width: 100px;
-    border-radius: 5px;
+  width: 100px;
+  border-radius: 5px;
 }
 
 .saveCancel {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .selectedImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .sideBar {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100vh;
-    border-right: 1px solid #000000;
-    padding-right: 0px;
-    width: 300px;
-    position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 1px solid #000000;
+  padding-right: 0px;
+  width: 300px;
+  position: fixed;
 }
 
 .signInComponent {
-    background-color: #000000;
-    width: 100vw;
-    height: 100vh;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
 }
 
 .signOut {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .signUp {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .signUpComponent {
-    background-color: #000000;
-    width: 100vw;
+  background-color: #000000;
+  width: 100vw;
 }
 
 .signUpLink {
-    text-decoration: none;
-    color: #026eff;
+  text-decoration: none;
+  color: #026eff;
 }
 
 .signUpLink:hover {
-    text-decoration: none;
-    color: #026eff;
+  text-decoration: none;
+  color: #026eff;
 }
 
 .signUpNow {
-    text-decoration: none;
-    color: #f15e23;
+  text-decoration: none;
+  color: #f15e23;
 }
 
 .signUpNow:hover {
-    text-decoration: none;
-    color: #f15e23;
-    opacity: 100%;
+  text-decoration: none;
+  color: #f15e23;
+  opacity: 100%;
 }
 
 .spin {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .spinnerContainer {
-    position: relative;
-    width: 100px;
-    height: 100px;
+  position: relative;
+  width: 100px;
+  height: 100px;
 }
 
 .spinnerImage {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .surv {
-    color: #026eff;
-    font-weight: bold;
-    padding-top: 50px;
+  color: #026eff;
+  font-weight: bold;
+  padding-top: 50px;
 }
 
 .survaidBlue {
-    color: #026eff;
+  color: #026eff;
 }
 
 .survaidBrand {
-    display: flex;
-    justify-content: center;
-    background-color: #000000;
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
 }
 
 .survaidContainer {
-    display: flex;
-    align-items: center;
-    background-color: #000000;
+  display: flex;
+  align-items: center;
+  background-color: #000000;
 }
 
 .survaidLogo {
-    max-width: 240px;
-    max-height: 240px;
-    margin: 20px auto;
+  max-width: 240px;
+  max-height: 240px;
+  margin: 20px auto;
 }
 
 .survaidLogoBrand {
-    max-width: 60px;
-    max-height: 60px;
-    margin: 10px auto;
+  max-width: 60px;
+  max-height: 60px;
+  margin: 10px auto;
 }
 
 .survaidOrange {
-    color: #f15e23;
+  color: #f15e23;
 }
 
 .survaidProfile {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  margin-right: 10px;
 }
 
 .survBrand {
-    color: #026eff;
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0px auto;
+  color: #026eff;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0px auto;
 }
 
 .survey {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #d3d3d3;
-    width: 90%;
-    padding: 40px;
-    margin: 100px auto 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  width: 90%;
+  padding: 40px;
+  margin: 100px auto 20px auto;
 }
 
 .surveyDropdown {
-    background-color: #f15e23;
-    border: 1px solid #f15e23;
-    border-radius: 0px;
-    width: 100%;
-    height: 60px;
-    font-weight: bold;
+  background-color: #f15e23;
+  border: 1px solid #f15e23;
+  border-radius: 0px;
+  width: 100%;
+  height: 60px;
+  font-weight: bold;
 }
 
 .surveyDropdown:focus {
-    background-color: #f15e23;
-    border: 1px solid #f15e23;
-    border-radius: 0px;
-    width: 100%;
-    box-shadow: none;
-    font-weight: bold;
+  background-color: #f15e23;
+  border: 1px solid #f15e23;
+  border-radius: 0px;
+  width: 100%;
+  box-shadow: none;
+  font-weight: bold;
 }
 
 .user {
-    color: #000000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .userContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .userInfo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 #password {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 ::placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1200px) {
-    .editGraphInput {
-        width: 90%;
-    }
+  .editGraphInput {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-    .editGraphHeader {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
+  .editGraphHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 
-    .editGraphInput {
-        width: 90%;
-    }
+  .editGraphInput {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .editGraphInput {
-        width: 100%;
-    }
+  .editGraphInput {
+    width: 100%;
+  }
 }
