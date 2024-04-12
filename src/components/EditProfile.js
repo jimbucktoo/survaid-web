@@ -1,22 +1,50 @@
 import React, { useState } from "react"
 import Sidebar from "./Sidebar"
 import ImagePicker from "./ImagePicker"
+import Black from "../assets/black.jpg"
 import { useNavigate } from "react-router-dom"
-import { getAuth } from "firebase/auth"
-import { getDatabase, ref as databaseRef, set } from "firebase/database"
+import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { getDatabase, ref as databaseRef, get, set, child } from "firebase/database"
 import { getStorage, getDownloadURL, ref as storageRef, uploadBytes } from "firebase/storage"
 import "../App.css"
 
 function EditProfile() {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
+    const [displayFirstName, setDisplayFirstName] = useState("")
+    const [displayLastName, setDisplayLastName] = useState("")
     const [selectedFile, setSelectedFile] = useState(null)
+    const [imageUrl, setImageUrl] = useState(null)
 
+    const dbRef = databaseRef(getDatabase())
     const navigate = useNavigate()
     const auth = getAuth()
     const user = auth.currentUser
     const db = getDatabase()
     const storage = getStorage()
+
+    onAuthStateChanged(auth, (user) => {
+        const profilePicture = storageRef(storage, "images/users/" + user.uid + "/profile")
+        if (user) {
+            getDownloadURL(profilePicture)
+                .then((url) => {
+                    setImageUrl(url)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
+            get(child(dbRef, "/users/" + user.uid))
+                .then((snapshot) => {
+                    const userData = snapshot.val()
+                    setDisplayFirstName(userData.firstName)
+                    setDisplayLastName(userData.lastName)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        }
+    })
 
     const handleFileSelect = (file) => {
         setSelectedFile(file)
@@ -42,10 +70,13 @@ function EditProfile() {
 
     function updateUser(downloadURL) {
         if (user !== null) {
+            const updatedFirstName = firstName || displayFirstName;
+            const updatedLastName = lastName || displayLastName;
+
             set(databaseRef(db, "/users/" + user.uid), {
                 email: user.email,
-                firstName: firstName,
-                lastName: lastName,
+                firstName: updatedFirstName,
+                lastName: updatedLastName,
                 role: "Researcher",
                 profilePicture: downloadURL
             })
@@ -66,17 +97,18 @@ function EditProfile() {
                 </div>
                 <form id="surveyForm" className="survey" onSubmit={handleSubmit}>
                     <div className="formInputs">
+                        <img className="editProfilePicture" src={imageUrl ? imageUrl : Black} alt="Profile"/>                   
+                        <div className="imagePickerContainer inputGroup">
+                            <label className="formInputLabel">Profile Picture: </label>
+                            <ImagePicker onFileSelect={handleFileSelect} />
+                        </div>
                         <div className="inputGroup">
                             <label className="formInputLabel">First Name: </label>
-                            <input className="formInput" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                            <input className="editProfileInput formInput" value={firstName} placeholder={displayFirstName} onChange={(e) => setFirstName(e.target.value)} />
                         </div>
                         <div className="inputGroup">
                             <label className="formInputLabel">Last Name: </label>
-                            <input className="formInput" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                        </div>
-                        <div className="inputGroup">
-                            <label className="formInputLabel">Profile Picture: </label>
-                            <ImagePicker onFileSelect={handleFileSelect} />
+                            <input className="editProfileInput formInput" value={lastName} placeholder={displayLastName} onChange={(e) => setLastName(e.target.value)} />
                         </div>
                     </div>
                 </form>

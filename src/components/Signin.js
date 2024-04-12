@@ -30,7 +30,6 @@ const Signin = () => {
                         if (snapshot.exists()) {
                             const users = snapshot.val()
                             const foundUsers = getUsersByEmail(users, email)
-
                             if (foundUsers.length > 0) {
                                 navigate("/Survey")
                                 console.log("Users found:", foundUsers)
@@ -82,13 +81,11 @@ const Signin = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                             </div>
-
                             {isResearcher ? null : (
                                 <div className="signInError">
                                     Please use the Survaid mobile app to sign in as a participant
                                 </div>
                             )}
-
                                 <div className="buttonOptions">
                                     <button className="btn btn-primary" type="submit">
                                         Sign In

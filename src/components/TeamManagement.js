@@ -183,7 +183,7 @@ function TeamManagement() {
                                         required
                                         name="email"
                                         type="email"
-                                        className="form-control inputAuth modalFormGroup"
+                                        className="form-control inputAuth modalFormGroup inviteResearchersInput"
                                         placeholder="Email"
                                         pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                                         value={email}
