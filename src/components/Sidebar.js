@@ -56,8 +56,8 @@ function Sidebar() {
                                 const surveyData = childSnapshot.val()
                                 surveysData.push({ key: surveyKey, ...surveyData })
                             })
-                            const filteredSurveys = surveysData.filter(
-                                (survey) => survey.createdBy === user.uid
+                            const filteredSurveys = surveysData.filter((survey) => 
+                                survey.researchers && survey.researchers.includes(user.uid)
                             )
                             setSurveys([])
                             setSurveys(filteredSurveys)
@@ -111,14 +111,11 @@ function Sidebar() {
                     <Link className="navigation" to={"/Analytics"}>
                         <li className="navigationItem">Analytics</li>
                     </Link>
-                    <Link className="navigation" to={"/Messaging"}>
-                        <li className="navigationItem">Messaging</li>
-                    </Link>
                     <Link className="navigation" to={"/TeamManagement"}>
-                        <li className="navigationItem lastItem">Team Management</li>
+                        <li className="navigationItem">Team Management</li>
                     </Link>
-                    <Link className="createSurveyLink" to={"/CreateSurvey"}>
-                        <li className="createSurvey">+ Create Survey</li>
+                    <Link className="navigation createSurveyLink" to={"/CreateSurvey"}>
+                        <li className="navigationItem lastItem createSurvey">+ Create Survey</li>
                     </Link>
                 </ul>
                 <Link className="user" to={"/Profile"}>

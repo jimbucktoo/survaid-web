@@ -17,7 +17,7 @@ const Signup = () => {
     const auth = getAuth()
     const db = getDatabase()
 
-    const SignUp = (e) => {
+    const signUp = (e) => {
         e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -41,7 +41,7 @@ const Signup = () => {
             </h1>
             <img className="survaidLogo" src={logo} alt="Survaid Logo" />
             <div>
-                <form onSubmit={SignUp}>
+                <form onSubmit={signUp}>
                     <div className="form-group">
                         <input
                         required

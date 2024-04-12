@@ -10,7 +10,6 @@ import "../App.css"
 function EditProfile() {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [email, setEmail] = useState("")
     const [selectedFile, setSelectedFile] = useState(null)
 
     const navigate = useNavigate()
@@ -44,7 +43,7 @@ function EditProfile() {
     function updateUser(downloadURL) {
         if (user !== null) {
             set(databaseRef(db, "/users/" + user.uid), {
-                email: email,
+                email: user.email,
                 firstName: firstName,
                 lastName: lastName,
                 role: "Researcher",
@@ -74,10 +73,6 @@ function EditProfile() {
                         <div className="inputGroup">
                             <label className="formInputLabel">Last Name: </label>
                             <input className="formInput" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                        </div>
-                        <div className="inputGroup">
-                            <label className="formInputLabel">Email: </label>
-                            <input className="formInput" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className="inputGroup">
                             <label className="formInputLabel">Profile Picture: </label>
