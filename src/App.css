@@ -70,10 +70,10 @@ table thead th {
     font-weight: bold;
 }
 
-.analysis {
+.analytics {
     color: black;
     text-align: left;
-    margin: 20px 0px;
+    margin-bottom: 20px;
 }
 
 .bold {
@@ -664,6 +664,7 @@ table thead th {
     font-size: 36px;
     font-weight: bold;
     margin: 0px auto;
+    cursor: default;
 }
 
 .survey {

@@ -85,7 +85,7 @@ const Signin = () => {
 
                             {isResearcher ? null : (
                                 <div className="signInError">
-                                    To sign in as a participant, please use the Survaid mobile app.
+                                    Please use the Survaid mobile app to sign in as a participant
                                 </div>
                             )}
 

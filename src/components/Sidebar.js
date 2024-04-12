@@ -73,58 +73,54 @@ function Sidebar() {
     return (
         <div className="sideBar">
             <ul className="nav flex-column">
-                <a className="survaidBrand" href="/">
+                <div className="survaidBrand">
                     <div className="survaidContainer">
-                        <img
-                        className="survaidLogoBrand"
-                        src={logo}
-                        alt="Survaid Logo"
-                    />
-                            <p className="survBrand">
-                                Surv<span className="aid">aid</span>
-                            </p>
+                        <img className="survaidLogoBrand" src={logo} alt="Survaid Logo" />
+                        <div className="survBrand">
+                            Surv<span className="aid">aid</span>
                         </div>
-                    </a>
-                    <li className="navDropdown">
-                        <div className="dropdown">
-                            <button
-                            className="btn btn-primary dropdown-toggle surveyDropdown"
-                            type="button"
-                            id="dropdownMenuButtonSidebar"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                                {newSurveyTitle}
-                        </button>
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonSidebar">
-                            {surveys.map((survey) => (
-                                <li key={survey.key}>
-                                    <button className="dropdown-item" onClick={() => loadSurvey(survey)}>{survey.title}</button>
-                                </li>
-                            ))}
-                            </ul>
-                        </div>
-                    </li>
-                    <Link className="navigation" to={"/Survey"}>
-                        <li className="navigationItem">Survey</li>
-                    </Link>
-                    <Link className="navigation" to={"/Analytics"}>
-                        <li className="navigationItem">Analytics</li>
-                    </Link>
-                    <Link className="navigation" to={"/TeamManagement"}>
-                        <li className="navigationItem">Team Management</li>
-                    </Link>
-                    <Link className="navigation createSurveyLink" to={"/CreateSurvey"}>
-                        <li className="navigationItem lastItem createSurvey">+ Create Survey</li>
-                    </Link>
-                </ul>
-                <Link className="user" to={"/Profile"}>
-                    <div className="profileSidebar">
-                        <img className="survaidProfile" src={imageUrl ? imageUrl : Black} alt="Profile" />
-                        {displayName === "" ? email : displayName}
                     </div>
+                </div>
+                <li className="navDropdown">
+                    <div className="dropdown">
+                        <button
+                        className="btn btn-primary dropdown-toggle surveyDropdown"
+                        type="button"
+                        id="dropdownMenuButtonSidebar"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                            {newSurveyTitle}
+                    </button>
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonSidebar">
+                        {surveys.map((survey) => (
+                            <li key={survey.key}>
+                                <button className="dropdown-item" onClick={() => loadSurvey(survey)}>{survey.title}</button>
+                            </li>
+                        ))}
+                        </ul>
+                    </div>
+                </li>
+                <Link className="navigation" to={"/Survey"}>
+                    <li className="navigationItem">Survey</li>
                 </Link>
-            </div>
+                <Link className="navigation" to={"/Analytics"}>
+                    <li className="navigationItem">Analytics</li>
+                </Link>
+                <Link className="navigation" to={"/TeamManagement"}>
+                    <li className="navigationItem">Team Management</li>
+                </Link>
+                <Link className="navigation createSurveyLink" to={"/CreateSurvey"}>
+                    <li className="navigationItem lastItem createSurvey">+ Create Survey</li>
+                </Link>
+            </ul>
+            <Link className="user" to={"/Profile"}>
+                <div className="profileSidebar">
+                    <img className="survaidProfile" src={imageUrl ? imageUrl : Black} alt="Profile" />
+                    {displayName === "" ? email : displayName}
+                </div>
+            </Link>
+        </div>
     )
 }
 
