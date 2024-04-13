@@ -27,7 +27,9 @@ table thead th {
 }
 
 .accordion-button {
-    color: #026eff !important;
+    background-color: #026eff !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
 }
 
 .accordion-button:focus {
