@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useContext, useCallback } from "react";
-import { SurveyContext } from "../SurveyContext";
-import Sidebar from "./Sidebar";
-import Loading from "./Loading";
-import { getDatabase, ref, child, get } from "firebase/database";
-import "../App.css";
+import React, { useState, useEffect, useContext, useCallback } from "react"
+import { SurveyContext } from "../SurveyContext"
+import Sidebar from "./Sidebar"
+import Loading from "./Loading"
+import { getDatabase, ref, child, get } from "firebase/database"
+import "../App.css"
 
 function Analytics() {
-    const dbRef = ref(getDatabase());
-    const [answers, setAnswers] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const { newSurveyKey } = useContext(SurveyContext);
+    const dbRef = ref(getDatabase())
+    const [answers, setAnswers] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const { newSurveyKey } = useContext(SurveyContext)
 
     const renderAnswerValue = (value) => {
         if (
@@ -20,12 +20,13 @@ function Analytics() {
                 <a href={value} target="_blank" rel="noopener noreferrer">
                     {value}
                 </a>
-            );
+            )
         }
-        return value;
-    };
+        return value
+    }
 
     const readData = useCallback(() => {
+        console.log(newSurveyKey)
         get(child(dbRef, "/surveys/" + newSurveyKey + "/answers"))
             .then((snapshot) => {
                 if (snapshot.exists()) {
@@ -38,37 +39,38 @@ function Analytics() {
                                 )
                             ).then((emailSnapshot) => {
                                 if (emailSnapshot.exists()) {
-                                    const email = emailSnapshot.val();
-                                    return { participantID, values, email };
+                                    const email = emailSnapshot.val()
+                                    return { participantID, values, email }
                                 } else {
-                                    return null;
+                                    return null
                                 }
-                            });
+                            })
                         }
-                    );
+                    )
 
                     Promise.all(promises).then((data) => {
-                        const validData = data.filter((item) => item !== null);
-                        setAnswers(validData);
-                        setIsLoading(false);
-                    });
+                        const validData = data.filter((item) => item !== null)
+                        setAnswers(validData)
+                        setIsLoading(false)
+                    })
                 } else {
-                    console.log("No Data Available");
-                    setIsLoading(false);
+                    console.log("No Data Available")
+                    setIsLoading(false)
+                    setAnswers(null)
                 }
             })
             .catch((error) => {
-                console.error(error);
-                setIsLoading(false);
-            });
-    }, [dbRef, newSurveyKey]);
+                console.error(error)
+                setIsLoading(false)
+            })
+    }, [dbRef, newSurveyKey])
 
     useEffect(() => {
         if (newSurveyKey !== null) {
-            setIsLoading(true);
-            readData();
+            setIsLoading(true)
+            readData()
         }
-    }, [newSurveyKey, readData]);
+    }, [newSurveyKey, readData])
 
     return (
         <div className="main">
@@ -86,7 +88,7 @@ function Analytics() {
                             {answers !== null &&
                                     answers.map(
                                         ({ participantID, values, email }) => {
-                                            const collapseId = `collapse-${participantID}`;
+                                            const collapseId = `collapse-${participantID}`
                                             return (
                                                 <div
                                                 className="accordion-item"
@@ -150,7 +152,7 @@ function Analytics() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                            );
+                                            )
                                         }
                                     )}
                                                 </div>
@@ -158,7 +160,7 @@ function Analytics() {
                                         </div>
             )}
                                     </div>
-    );
+    )
 }
 
-export default Analytics;
+export default Analytics

@@ -70,8 +70,8 @@ function EditProfile() {
 
     function updateUser(downloadURL) {
         if (user !== null) {
-            const updatedFirstName = firstName || displayFirstName;
-            const updatedLastName = lastName || displayLastName;
+            const updatedFirstName = firstName || displayFirstName
+            const updatedLastName = lastName || displayLastName
 
             set(databaseRef(db, "/users/" + user.uid), {
                 email: user.email,
