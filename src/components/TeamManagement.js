@@ -17,7 +17,6 @@ function TeamManagement() {
     const [email, setEmail] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
     const { newSurveyKey } = useContext(SurveyContext)
-
     const [show, setShow] = useState(false)
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
