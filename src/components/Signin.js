@@ -98,11 +98,6 @@ const Signin = () => {
                                 Don"t have an account? <span className="signUpNow">Sign up now</span>
                             </Link>
                         </div>
-                        <div className="forgotPassword">
-                            <Link className="forgotPasswordLink" to={"/"}>
-                                Forgot your password?
-                            </Link>
-                        </div>
                     </div>
     )
 }

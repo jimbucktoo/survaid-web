@@ -195,20 +195,6 @@ table thead th {
     width: 24px;
 }
 
-.forgotPassword {
-    margin-top: 5px;
-}
-
-.forgotPasswordLink {
-    text-decoration: none;
-    color: #026eff;
-}
-
-.forgotPasswordLink:hover {
-    text-decoration: none;
-    color: #026eff;
-}
-
 .formInput {
     border: none;
     border-bottom: 1px solid #000000;
