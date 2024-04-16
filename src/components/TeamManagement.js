@@ -23,6 +23,44 @@ function TeamManagement() {
 
     const dbRef = ref(getDatabase())
 
+    function removeResearcher(index) {
+        get(child(dbRef, "/surveys/" + newSurveyKey + "/researchers"))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    var researcherArray = snapshot.val()
+                    researcherArray.splice(index, 1)
+                    console.log(researcherArray)
+                    set(child(dbRef, "/surveys/" + newSurveyKey + "/researchers"),
+                        researcherArray
+                    ).catch((error) => {
+                        console.error(error)
+                    })
+                }
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+    }
+
+    function removeParticipant(index) {
+        get(child(dbRef, "/surveys/" + newSurveyKey + "/participants"))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    var participantArray = snapshot.val()
+                    participantArray.splice(index, 1)
+                    console.log(participantArray)
+                    set(child(dbRef, "/surveys/" + newSurveyKey + "/participants"),
+                        participantArray
+                    ).catch((error) => {
+                        console.error(error)
+                    })
+                }
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+    }
+
     function sendInvite() {
         get(child(dbRef, "/users/"))
             .then((snapshot) => {
@@ -258,113 +296,79 @@ function TeamManagement() {
                                         >
                                                 <td colSpan="3">
                                                     <div className="editManagement">
-                                                        <button className="remove">
+                                                        <button onClick={() => removeResearcher(index)} className="remove">
                                                             Remove Researcher
                                                         </button>
-                                                        <div className="saveCancel">
-                                                            <button
-                                                            className="btn btn-primary save"
-                                                            type="button"
-                                                        >
-                                                                Save
-                                                        </button>
-                                                        <button
-                                                        className="cancel"
-                                                        data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseResearchers"
-                                                        aria-expanded="false"
-                                                        aria-controls="collapseResearchers"
-                                                    >
-                                                            Cancel
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </React.Fragment>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div className={!isVisible ? "participantsTeam" : "hide"}>
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Participants</th>
-                                    <th scope="col">Role</th>
-                                    <th scope="col">Email</th>
-                                </tr>
-                            </thead>
-                            <tbody id="participantsTeam">
-                                {userParticipants !== null &&
-                                        userParticipants.map((participant, index) => (
-                                            <React.Fragment key={index}>
-                                                <tr
-                                                className="userRow"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target={`#collapseParticipants${index}`}
-                                                aria-expanded="false"
-                                                aria-controls={`collapseParticipants${index}`}
-                                            >
-                                                    <td>
-                                                        <div className="userContainer">
-                                                            <img
-                                                            className="survaidProfile"
-                                                            src={
-                                                                participant.profilePicture
-                                                                    ? participant.profilePicture
-                                                                    : Black
-                                                            }
-                                                            alt="Profile"
-                                                        />
-                                                                <div className="userInfo">
-                                                                    {participant.firstName +
-                                                                            " " +
-                                                                            participant.lastName}
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><div className="userInfo">{participant.role}</div></td>
-                                                        <td><div className="userInfo">{participant.email}</div></td>
-                                                    </tr>
-                                                    <tr
-                                                    className="collapse multi-collapse"
-                                                    id={`collapseParticipants${index}`}
-                                                    data-bs-parent="#participantsTeam"
-                                                >
-                                                        <td colSpan="3">
-                                                            <div className="editManagement">
-                                                                <button className="remove">
-                                                                    Remove Participant
-                                                                </button>
-                                                                <div className="saveCancel">
-                                                                    <button
-                                                                    className="btn btn-primary save"
-                                                                    type="button"
-                                                                >
-                                                                        Save
-                                                                </button>
-                                                                <button
-                                                                className="cancel"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseParticipants"
-                                                                aria-expanded="false"
-                                                                aria-controls="collapseParticipants"
-                                                            >
-                                                                    Cancel
-                                                            </button>
-                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
                                         </React.Fragment>
-                                        ))}
+                                ))}
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                            <div className={!isVisible ? "participantsTeam" : "hide"}>
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Participants</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="participantsTeam">
+                                        {userParticipants !== null &&
+                                                userParticipants.map((participant, index) => (
+                                                    <React.Fragment key={index}>
+                                                        <tr
+                                                        className="userRow"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target={`#collapseParticipants${index}`}
+                                                        aria-expanded="false"
+                                                        aria-controls={`collapseParticipants${index}`}
+                                                    >
+                                                            <td>
+                                                                <div className="userContainer">
+                                                                    <img
+                                                                    className="survaidProfile"
+                                                                    src={
+                                                                        participant.profilePicture
+                                                                            ? participant.profilePicture
+                                                                            : Black
+                                                                    }
+                                                                    alt="Profile"
+                                                                />
+                                                                        <div className="userInfo">
+                                                                            {participant.firstName +
+                                                                                    " " +
+                                                                                    participant.lastName}
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td><div className="userInfo">{participant.role}</div></td>
+                                                                <td><div className="userInfo">{participant.email}</div></td>
+                                                            </tr>
+                                                            <tr
+                                                            className="collapse multi-collapse"
+                                                            id={`collapseParticipants${index}`}
+                                                            data-bs-parent="#participantsTeam"
+                                                        >
+                                                                <td colSpan="3">
+                                                                    <div className="editManagement">
+                                                                        <button onClick={() => removeParticipant(index)} className="remove">
+                                                                            Remove Participant
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </React.Fragment>
+                                                ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
             )}
-                    </div>
+                                    </div>
     )
 }
 
