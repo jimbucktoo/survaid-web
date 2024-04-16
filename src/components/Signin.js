@@ -10,7 +10,7 @@ import "../App.css"
 const Signin = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [isResearcher, setIsResearcher] = useState(true)
+    const [errorMessage, setErrorMessage] = useState("")
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -32,10 +32,8 @@ const Signin = () => {
                             const foundUsers = getUsersByEmail(users, email)
                             if (foundUsers.length > 0) {
                                 navigate("/Survey")
-                                console.log("Users found:", foundUsers)
                             } else {
-                                setIsResearcher(false)
-                                console.log("No users found with email:", email)
+                                setErrorMessage("Sign In Error: Please use the Survaid mobile app to sign in as a participant")
                             }
                         }
                     })
@@ -45,6 +43,7 @@ const Signin = () => {
             })
             .catch((error) => {
                 console.log(error)
+                setErrorMessage("Sign In Error: " + error.code)
             })
     }
 
@@ -81,24 +80,20 @@ const Signin = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                             </div>
-                            {isResearcher ? null : (
-                                <div className="signInError">
-                                    Please use the Survaid mobile app to sign in as a participant
-                                </div>
-                            )}
-                                <div className="buttonOptions">
-                                    <button className="btn btn-primary" type="submit">
-                                        Sign In
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="signUp">
-                            <Link className="signUpLink" to={"/SignUp"}>
-                                Don"t have an account? <span className="signUpNow">Sign up now</span>
-                            </Link>
-                        </div>
+                            {errorMessage && <div className="signInError">{errorMessage}</div>}
+                            <div className="buttonOptions">
+                                <button className="btn btn-primary" type="submit">
+                                    Sign In
+                                </button>
+                            </div>
+                        </form>
                     </div>
+                    <div className="signUp">
+                        <Link className="signUpLink" to={"/SignUp"}>
+                            Don"t have an account? <span className="signUpNow">Sign up now</span>
+                        </Link>
+                    </div>
+                </div>
     )
 }
 

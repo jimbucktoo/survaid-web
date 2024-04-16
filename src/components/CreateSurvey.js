@@ -32,7 +32,7 @@ function CreateSurvey() {
                 getDownloadURL(snapshot.ref).then((downloadURL) => {
                     pushSurvey(downloadURL)
                 }).catch((error) => {
-                    console.error("Error getting download URL:", error)
+                    console.error(error)
                 })
             })
         }

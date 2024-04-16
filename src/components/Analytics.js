@@ -26,7 +26,6 @@ function Analytics() {
     }
 
     const readData = useCallback(() => {
-        console.log(newSurveyKey)
         get(child(dbRef, "/surveys/" + newSurveyKey + "/answers"))
             .then((snapshot) => {
                 if (snapshot.exists()) {
@@ -54,7 +53,6 @@ function Analytics() {
                         setIsLoading(false)
                     })
                 } else {
-                    console.log("No Data Available")
                     setIsLoading(false)
                     setAnswers(null)
                 }

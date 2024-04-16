@@ -12,6 +12,7 @@ const Signup = () => {
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword]  = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
 
     const navigate = useNavigate()
     const auth = getAuth()
@@ -30,7 +31,7 @@ const Signup = () => {
                 })
                 navigate("/Survey")
             }).catch((error) => {
-                console.log(error)
+                setErrorMessage("Sign Up Error: " + error.code)
             })
     } 
 
@@ -85,6 +86,7 @@ const Signup = () => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
+                        {errorMessage && <div className="signInError">{errorMessage}</div>}
                         <div className="buttonOptions">         
                             <button className="btn btn-primary" type="submit">Sign Up</button>
                             <Link className="forgotPasswordLink" to={"/"}>

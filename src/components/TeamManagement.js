@@ -29,7 +29,6 @@ function TeamManagement() {
                 if (snapshot.exists()) {
                     var researcherArray = snapshot.val()
                     researcherArray.splice(index, 1)
-                    console.log(researcherArray)
                     set(child(dbRef, "/surveys/" + newSurveyKey + "/researchers"),
                         researcherArray
                     ).catch((error) => {
@@ -48,7 +47,6 @@ function TeamManagement() {
                 if (snapshot.exists()) {
                     var participantArray = snapshot.val()
                     participantArray.splice(index, 1)
-                    console.log(participantArray)
                     set(child(dbRef, "/surveys/" + newSurveyKey + "/participants"),
                         participantArray
                     ).catch((error) => {
@@ -153,7 +151,7 @@ function TeamManagement() {
                         }
                     })
                     .catch((error) => {
-                        console.error("No Users Found")
+                        console.error(error)
                     })
             })
 

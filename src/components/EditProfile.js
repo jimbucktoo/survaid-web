@@ -57,7 +57,7 @@ function EditProfile() {
                 getDownloadURL(snapshot.ref).then((downloadURL) => {
                     updateUser(downloadURL)
                 }).catch((error) => {
-                    console.error("Error getting download URL:", error)
+                    console.error(error)
                 })
             })
         }
