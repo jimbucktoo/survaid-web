@@ -84,7 +84,7 @@ function Sidebar() {
                 <li className="navDropdown">
                     <div className="dropdown">
                         <button
-                        className="btn btn-primary dropdown-toggle surveyDropdown"
+                        className="dropdown-toggle surveyDropdown"
                         type="button"
                         id="dropdownMenuButtonSidebar"
                         data-bs-toggle="dropdown"

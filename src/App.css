@@ -76,6 +76,7 @@ table thead th {
     color: black;
     text-align: left;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .bold {
@@ -608,24 +609,6 @@ table thead th {
     text-decoration: none;
     color: #f15e23;
     opacity: 100%;
-}
-
-.spin {
-    width: 100px;
-    height: 100px;
-}
-
-.spinnerContainer {
-    position: relative;
-    width: 100px;
-    height: 100px;
-}
-
-.spinnerImage {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 .surv {
