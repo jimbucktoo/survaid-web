@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useContext, useCallback } from "react"
-import { SurveyContext } from "../SurveyContext"
-import Sidebar from "./Sidebar"
-import Loading from "./Loading"
-import { getDatabase, ref, child, get } from "firebase/database"
-import "../App.css"
+import React, { useState, useEffect, useContext, useCallback } from "react";
+import { SurveyContext } from "../SurveyContext";
+import Sidebar from "./Sidebar";
+import Loading from "./Loading";
+import { getDatabase, ref, child, get } from "firebase/database";
+import "../App.css";
 
 function Analytics() {
-    const dbRef = ref(getDatabase())
-    const [answers, setAnswers] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
-    const { newSurveyKey } = useContext(SurveyContext)
+    const dbRef = ref(getDatabase());
+    const [answers, setAnswers] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const { newSurveyKey } = useContext(SurveyContext);
 
     const renderAnswerValue = (value) => {
         if (
@@ -20,10 +20,10 @@ function Analytics() {
                 <a href={value} target="_blank" rel="noopener noreferrer">
                     {value}
                 </a>
-            )
+            );
         }
-        return value
-    }
+        return value;
+    };
 
     const readData = useCallback(() => {
         get(child(dbRef, "/surveys/" + newSurveyKey + "/answers"))
@@ -38,37 +38,37 @@ function Analytics() {
                                 )
                             ).then((emailSnapshot) => {
                                 if (emailSnapshot.exists()) {
-                                    const email = emailSnapshot.val()
-                                    return { participantID, values, email }
+                                    const email = emailSnapshot.val();
+                                    return { participantID, values, email };
                                 } else {
-                                    return null
+                                    return null;
                                 }
-                            })
+                            });
                         }
-                    )
+                    );
 
                     Promise.all(promises).then((data) => {
-                        const validData = data.filter((item) => item !== null)
-                        setAnswers(validData)
-                        setIsLoading(false)
-                    })
+                        const validData = data.filter((item) => item !== null);
+                        setAnswers(validData);
+                        setIsLoading(false);
+                    });
                 } else {
-                    setIsLoading(false)
-                    setAnswers(null)
+                    setIsLoading(false);
+                    setAnswers(null);
                 }
             })
             .catch((error) => {
-                console.error(error)
-                setIsLoading(false)
-            })
-    }, [dbRef, newSurveyKey])
+                console.error(error);
+                setIsLoading(false);
+            });
+    }, [dbRef, newSurveyKey]);
 
     useEffect(() => {
         if (newSurveyKey !== null) {
-            setIsLoading(true)
-            readData()
+            setIsLoading(true);
+            readData();
         }
-    }, [newSurveyKey, readData])
+    }, [newSurveyKey, readData]);
 
     return (
         <div className="main">
@@ -84,19 +84,19 @@ function Analytics() {
                         <div className="analytics">Participant Answers:</div>
                         <div className="accordion" id="accordionExample">
                             {answers !== null &&
-                                    answers.map(
-                                        ({ participantID, values, email }) => {
-                                            const collapseId = `collapse-${participantID}`
-                                            return (
-                                                <div
+                                answers.map(
+                                    ({ participantID, values, email }) => {
+                                        const collapseId = `collapse-${participantID}`;
+                                        return (
+                                            <div
                                                 className="accordion-item"
                                                 key={participantID}
                                             >
-                                                    <h2
+                                                <h2
                                                     className="accordion-header"
                                                     id={`heading-${participantID}`}
                                                 >
-                                                        <button
+                                                    <button
                                                         className="accordion-button"
                                                         type="button"
                                                         data-bs-toggle="collapse"
@@ -106,30 +106,28 @@ function Analytics() {
                                                             collapseId
                                                         }
                                                     >
-                                                            {email}
+                                                        {email}
                                                     </button>
                                                 </h2>
                                                 <div
-                                                id={collapseId}
-                                                className="accordion-collapse collapse"
-                                                aria-labelledby={`heading-${participantID}`}
-                                                data-bs-parent="#accordionExample"
-                                            >
+                                                    id={collapseId}
+                                                    className="accordion-collapse collapse"
+                                                    aria-labelledby={`heading-${participantID}`}
+                                                    data-bs-parent="#accordionExample"
+                                                >
                                                     <div className="accordion-body">
                                                         {values.map(
                                                             (question) => (
                                                                 <div
-                                                                className="displayQuestion"
-                                                                key={
-                                                                    question.questionIndex
-                                                                }
-                                                            >
+                                                                    className="displayQuestion"
+                                                                    key={
+                                                                        question.questionIndex
+                                                                    }
+                                                                >
                                                                     <div className="displayQuestionLabel">
-                                                                        Question
-                                                                        ID:{" "}
-                                                                        {
-                                                                            question.questionIndex
-                                                                        }
+                                                                        Question:{" "}
+                                                                        {question.questionIndex +
+                                                                            1}
                                                                     </div>
                                                                     <div className="displayQuestionLabel">
                                                                         Question
@@ -147,18 +145,18 @@ function Analytics() {
                                                                 </div>
                                                             )
                                                         )}
-                                                            </div>
-                                                        </div>
                                                     </div>
-                                            )
-                                        }
-                                    )}
                                                 </div>
                                             </div>
-                                        </div>
+                                        );
+                                    }
+                                )}
+                        </div>
+                    </div>
+                </div>
             )}
-                                    </div>
-    )
+        </div>
+    );
 }
 
-export default Analytics
+export default Analytics;
